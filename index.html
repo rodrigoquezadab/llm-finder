@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="LLM Atlas: catálogo, benchmarks y comparación de modelos de lenguaje.">
+  <meta name="theme-color" content="#0b1020">
+  <title>LLM Atlas — Modelos de lenguaje</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a class="brand" href="#" aria-label="LLM Atlas inicio">
+        <span class="brand-mark">λ</span>
+        <span>LLM Atlas</span>
+      </a>
+      <button id="themeToggle" class="icon-btn" type="button" aria-label="Cambiar tema">☼</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="eyebrow">CATÁLOGO DE MODELOS DE IA</div>
+        <h1>Encuentra el LLM adecuado.</h1>
+        <p>Compara modelos por fecha, benchmarks, contexto, modalidad y disponibilidad.</p>
+        <div class="search-wrap">
+          <span>⌕</span>
+          <input id="searchInput" type="search" placeholder="Buscar modelo, proveedor o capacidad…" autocomplete="off">
+        </div>
+      </div>
+    </section>
+
+    <section class="container content">
+      <div class="toolbar">
+        <div class="stats"><strong id="modelCount">0</strong> modelos</div>
+        <button id="filtersToggle" class="secondary-btn" type="button">☷ Filtros</button>
+        <label class="sort">
+          <span>Ordenar</span>
+          <select id="sortSelect">
+            <option value="score">Atlas Score</option>
+            <option value="date">Más recientes</option>
+            <option value="name">Nombre</option>
+            <option value="context">Contexto</option>
+          </select>
+        </label>
+      </div>
+
+      <div id="filtersPanel" class="filters-panel">
+        <label>Proveedor
+          <select id="providerFilter"><option value="">Todos</option></select>
+        </label>
+        <label>Tipo
+          <select id="typeFilter">
+            <option value="">Todos</option>
+            <option value="Propietario">Propietario</option>
+            <option value="Open Weights">Open Weights</option>
+            <option value="Open Source">Open Source</option>
+          </select>
+        </label>
+        <label>Modalidad
+          <select id="modalityFilter">
+            <option value="">Todas</option>
+            <option value="Text">Text</option>
+            <option value="Vision">Vision</option>
+            <option value="Audio">Audio</option>
+            <option value="Multimodal">Multimodal</option>
+          </select>
+        </label>
+        <label>Contexto mínimo
+          <select id="contextFilter">
+            <option value="0">Cualquiera</option>
+            <option value="128000">128K+</option>
+            <option value="200000">200K+</option>
+            <option value="500000">500K+</option>
+            <option value="1000000">1M+</option>
+          </select>
+        </label>
+        <button id="clearFilters" class="link-btn" type="button">Limpiar filtros</button>
+      </div>
+
+      <div class="active-filters" id="activeFilters"></div>
+      <div id="modelGrid" class="model-grid"></div>
+      <div id="emptyState" class="empty hidden">
+        <div>∅</div>
+        <h2>No encontramos modelos</h2>
+        <p>Prueba con otra búsqueda o elimina algún filtro.</p>
+      </div>
+    </section>
+  </main>
+
+  <aside id="compareBar" class="compare-bar" aria-live="polite">
+    <div class="container compare-inner">
+      <div><strong id="compareCount">0</strong> seleccionados</div>
+      <div class="compare-actions">
+        <button id="compareBtn" class="primary-btn" type="button">Comparar</button>
+        <button id="clearCompare" class="secondary-btn" type="button">Limpiar</button>
+      </div>
+    </div>
+  </aside>
+
+  <dialog id="modelDialog">
+    <div class="dialog-head">
+      <button id="closeDialog" class="icon-btn" type="button" aria-label="Cerrar">×</button>
+    </div>
+    <div id="dialogContent"></div>
+  </dialog>
+
+  <dialog id="compareDialog">
+    <div class="dialog-head">
+      <h2>Comparación</h2>
+      <button id="closeCompare" class="icon-btn" type="button" aria-label="Cerrar">×</button>
+    </div>
+    <div id="compareContent" class="compare-table-wrap"></div>
+  </dialog>
+
+  <footer>
+    <div class="container">
+      <strong>LLM Atlas</strong>
+      <span>Catálogo experimental de modelos de lenguaje.</span>
+      <small>Los benchmarks pueden variar según metodología, versión y fecha. Verifica siempre la fuente original.</small>
+    </div>
+  </footer>
+
+  <script src="js/app.js" defer></script>
+</body>
+</html>

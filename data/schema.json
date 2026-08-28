@@ -1,0 +1,95 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LLM Atlas Model",
+  "type": "object",
+  "required": [
+    "id",
+    "name",
+    "provider",
+    "type",
+    "releaseDate",
+    "context",
+    "modalities",
+    "atlasScore",
+    "benchmarks",
+    "officialUrl"
+  ],
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "provider": {
+      "type": "string"
+    },
+    "type": {
+      "enum": [
+        "Propietario",
+        "Open Weights",
+        "Open Source"
+      ]
+    },
+    "releaseDate": {
+      "type": "string",
+      "format": "date"
+    },
+    "context": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "modalities": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "atlasScore": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 100
+    },
+    "benchmarks": {
+      "type": "object",
+      "additionalProperties": {
+        "type": [
+          "number",
+          "null"
+        ]
+      }
+    },
+    "officialUrl": {
+      "type": "string",
+      "format": "uri"
+    },
+    "apiUrl": {
+      "type": "string",
+      "format": "uri"
+    },
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "name": {
+            "type": "string"
+          },
+          "measuredAt": {
+            "type": "string"
+          },
+          "benchmarkVersion": {
+            "type": "string"
+          },
+          "methodology": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

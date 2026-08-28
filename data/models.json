@@ -1,0 +1,162 @@
+[
+  {
+    "id": "gpt-5",
+    "name": "GPT-5",
+    "provider": "OpenAI",
+    "type": "Propietario",
+    "releaseDate": "2026-08-07",
+    "context": 400000,
+    "modalities": [
+      "Multimodal"
+    ],
+    "atlasScore": 95.2,
+    "benchmarks": {
+      "MMLU": 93.8,
+      "GPQA": 88.7,
+      "AIME": 95.1,
+      "SWE-bench": 79.4
+    },
+    "officialUrl": "https://openai.com/",
+    "apiUrl": "https://platform.openai.com/docs/"
+  },
+  {
+    "id": "claude-opus-4-1",
+    "name": "Claude Opus 4.1",
+    "provider": "Anthropic",
+    "type": "Propietario",
+    "releaseDate": "2025-08-05",
+    "context": 200000,
+    "modalities": [
+      "Multimodal"
+    ],
+    "atlasScore": 93.7,
+    "benchmarks": {
+      "MMLU": 92.0,
+      "GPQA": 87.0,
+      "AIME": 93.0,
+      "SWE-bench": 74.5
+    },
+    "officialUrl": "https://www.anthropic.com/",
+    "apiUrl": "https://docs.anthropic.com/"
+  },
+  {
+    "id": "gemini-2-5-pro",
+    "name": "Gemini 2.5 Pro",
+    "provider": "Google",
+    "type": "Propietario",
+    "releaseDate": "2025-03-25",
+    "context": 1000000,
+    "modalities": [
+      "Multimodal"
+    ],
+    "atlasScore": 94.1,
+    "benchmarks": {
+      "MMLU": 92.4,
+      "GPQA": 88.5,
+      "AIME": 94.5,
+      "SWE-bench": 76.0
+    },
+    "officialUrl": "https://deepmind.google/technologies/gemini/",
+    "apiUrl": "https://ai.google.dev/"
+  },
+  {
+    "id": "grok-4",
+    "name": "Grok 4",
+    "provider": "xAI",
+    "type": "Propietario",
+    "releaseDate": "2025-07-09",
+    "context": 256000,
+    "modalities": [
+      "Multimodal"
+    ],
+    "atlasScore": 92.8,
+    "benchmarks": {
+      "MMLU": 91.0,
+      "GPQA": 87.5,
+      "AIME": 93.0,
+      "SWE-bench": 72.0
+    },
+    "officialUrl": "https://x.ai/",
+    "apiUrl": "https://docs.x.ai/"
+  },
+  {
+    "id": "qwen3-235b",
+    "name": "Qwen3 235B A22B",
+    "provider": "Alibaba",
+    "type": "Open Weights",
+    "releaseDate": "2025-04-28",
+    "context": 131072,
+    "modalities": [
+      "Text"
+    ],
+    "atlasScore": 88.9,
+    "benchmarks": {
+      "MMLU": 88.6,
+      "GPQA": 81.1,
+      "AIME": 85.0,
+      "SWE-bench": 70.2
+    },
+    "officialUrl": "https://qwenlm.github.io/",
+    "apiUrl": "https://huggingface.co/Qwen"
+  },
+  {
+    "id": "deepseek-r1",
+    "name": "DeepSeek-R1",
+    "provider": "DeepSeek",
+    "type": "Open Weights",
+    "releaseDate": "2025-01-20",
+    "context": 128000,
+    "modalities": [
+      "Text"
+    ],
+    "atlasScore": 89.6,
+    "benchmarks": {
+      "MMLU": 90.8,
+      "GPQA": 71.5,
+      "AIME": 79.8,
+      "SWE-bench": 49.2
+    },
+    "officialUrl": "https://www.deepseek.com/",
+    "apiUrl": "https://api-docs.deepseek.com/"
+  },
+  {
+    "id": "llama-4-maverick",
+    "name": "Llama 4 Maverick",
+    "provider": "Meta",
+    "type": "Open Weights",
+    "releaseDate": "2025-04-05",
+    "context": 1048576,
+    "modalities": [
+      "Multimodal"
+    ],
+    "atlasScore": 86.9,
+    "benchmarks": {
+      "MMLU": 87.2,
+      "GPQA": 69.8,
+      "AIME": 73.0,
+      "SWE-bench": 50.0
+    },
+    "officialUrl": "https://www.llama.com/",
+    "apiUrl": "https://www.llama.com/"
+  },
+  {
+    "id": "mistral-medium-3",
+    "name": "Mistral Medium 3",
+    "provider": "Mistral AI",
+    "type": "Propietario",
+    "releaseDate": "2025-05-07",
+    "context": 131072,
+    "modalities": [
+      "Multimodal"
+    ],
+    "atlasScore": 86.3,
+    "benchmarks": {
+      "MMLU": 88.0,
+      "GPQA": 72.0,
+      "AIME": 77.0,
+      "SWE-bench": 65.0
+    },
+    "officialUrl": "https://mistral.ai/",
+    "apiUrl": "https://docs.mistral.ai/"
+  }
+]
