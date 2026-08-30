@@ -1,49 +1,35 @@
-# Fuentes de datos
+# Fuentes de Datos y Estrategia de Ingesta — LLM Atlas
 
-## Principios
+LLM Atlas consolida y normaliza datos provenientes de los benchmarks y leaderboards públicos más confiables del sector.
 
-Priorizar:
-1. documentación y páginas oficiales del proveedor;
-2. benchmark/leaderboard original;
-3. repositorios oficiales;
-4. agregadores con metodología explícita.
+## 🔗 Portales y Leaderboards Sincronizados
 
-## Fuentes sugeridas
+1. **[Artificial Analysis – LLM Leaderboard](https://artificialanalysis.ai/leaderboards/models)**
+   - Métricas: Intelligence Index, Coding Index, SWE-bench, Tokens/segundo, TTFT y ventana de contexto.
+2. **[Opper AI – LLM Leaderboard](https://opper.ai/llm-leaderboard)**
+   - Métricas: Intelligence, Coding, Agentic, Math y precios por token.
+3. **[LMArena / Arena – Chatbot Arena](https://lmarena.ai/)**
+   - Métricas: Arena Elo, Coding Elo, Hard Prompts Elo basado en blind preference tests.
+4. **[Hugging Face – Leaderboards & Evaluations](https://huggingface.co/docs/leaderboards/index)**
+   - Métricas: Open LLM Leaderboard (MMLU-PRO, GPQA, IFEval, MATH).
+5. **[LLM Benchmarks](https://llmbenchmarks.io/es/)**
+   - Métricas: Rendimiento de inferencia, tokens por segundo y latencia.
+6. **[BenchLM – LLM Leaderboard](https://www.benchlm.ai/)**
+   - Métricas: Razonamiento, seguimiento de instrucciones y coherencia de agentes.
 
-- Hugging Face / Open LLM Leaderboard
-- LM Arena
-- OpenRouter Models
-- Artificial Analysis
-- páginas oficiales de OpenAI
-- Anthropic
-- Google Gemini
-- xAI
-- Meta Llama
-- Mistral
-- Qwen
-- DeepSeek
-- otros proveedores conforme aparezcan
+---
 
-## Normalización
+## 💻 Comando de Actualización
 
-Nunca sobrescribas un benchmark sin conservar:
-- fuente;
-- URL;
-- fecha;
-- versión;
-- metodología;
-- nombre exacto del modelo;
-- snapshot/version del modelo.
+Para sincronizar y actualizar el catálogo `data/models.json` con las últimas métricas:
 
-## Actualización
+```bash
+node scripts/sync_leaderboards.js
+```
 
-Una tarea programada puede:
-1. descubrir modelos;
-2. resolver identidad;
-3. comprobar duplicados;
-4. actualizar metadata;
-5. importar benchmarks;
-6. actualizar precios;
-7. registrar cambios;
-8. publicar un snapshot.
+O con Python:
+```bash
+python scripts/update_catalog.py
+```
 
+El script genera automáticamente un respaldo en `data/backups/` antes de aplicar cambios.

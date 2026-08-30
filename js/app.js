@@ -134,7 +134,9 @@ function getProviderTheme(provider) {
     "Meta": { color: "#0081fb", bg: "rgba(0, 129, 251, 0.12)" },
     "xAI": { color: "#f3f3f3", bg: "rgba(255, 255, 255, 0.12)" },
     "Mistral AI": { color: "#ff7000", bg: "rgba(255, 112, 0, 0.12)" },
-    "Alibaba": { color: "#ff6a00", bg: "rgba(255, 106, 0, 0.12)" }
+    "Alibaba": { color: "#ff6a00", bg: "rgba(255, 106, 0, 0.12)" },
+    "Cohere": { color: "#39594d", bg: "rgba(57, 89, 77, 0.15)" },
+    "IBM": { color: "#0f62fe", bg: "rgba(15, 98, 254, 0.12)" }
   };
   return map[provider] || { color: "var(--accent)", bg: "var(--surface-2)" };
 }

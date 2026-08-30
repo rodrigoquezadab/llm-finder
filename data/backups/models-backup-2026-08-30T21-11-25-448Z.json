@@ -1,165 +1,5 @@
 [
   {
-    "id": "claude-opus-5",
-    "name": "Claude Opus 5",
-    "provider": "Anthropic",
-    "type": "Propietario",
-    "releaseDate": "2026-08-27",
-    "context": 2000000,
-    "modalities": [
-      "Multimodal"
-    ],
-    "atlasScore": 99.2,
-    "benchmarks": {
-      "MMLU": 98.6,
-      "GPQA": 94.8,
-      "AIME": 99.1,
-      "SWE-bench": 91.4
-    },
-    "officialUrl": "https://www.anthropic.com/",
-    "apiUrl": "https://docs.anthropic.com/"
-  },
-  {
-    "id": "claude-fable-5",
-    "name": "Claude Fable 5",
-    "provider": "Anthropic",
-    "type": "Propietario",
-    "releaseDate": "2026-08-24",
-    "context": 1000000,
-    "modalities": [
-      "Multimodal"
-    ],
-    "atlasScore": 98.7,
-    "benchmarks": {
-      "MMLU": 97.8,
-      "GPQA": 93.4,
-      "AIME": 98.6,
-      "SWE-bench": 88.2
-    },
-    "officialUrl": "https://www.anthropic.com/",
-    "apiUrl": "https://docs.anthropic.com/"
-  },
-  {
-    "id": "claude-mythos",
-    "name": "Claude Mythos",
-    "provider": "Anthropic",
-    "type": "Propietario",
-    "releaseDate": "2026-08-10",
-    "context": 1000000,
-    "modalities": [
-      "Multimodal"
-    ],
-    "atlasScore": 97.9,
-    "benchmarks": {
-      "MMLU": 96.9,
-      "GPQA": 92.1,
-      "AIME": 97.5,
-      "SWE-bench": 85.9
-    },
-    "officialUrl": "https://www.anthropic.com/",
-    "apiUrl": "https://docs.anthropic.com/"
-  },
-  {
-    "id": "claude-opus-4-1",
-    "name": "Claude Opus 4.1",
-    "provider": "Anthropic",
-    "type": "Propietario",
-    "releaseDate": "2025-08-05",
-    "context": 200000,
-    "modalities": [
-      "Multimodal"
-    ],
-    "atlasScore": 93.7,
-    "benchmarks": {
-      "MMLU": 92,
-      "GPQA": 87,
-      "AIME": 93,
-      "SWE-bench": 74.5
-    },
-    "officialUrl": "https://www.anthropic.com/",
-    "apiUrl": "https://docs.anthropic.com/"
-  },
-  {
-    "id": "claude-3-7-sonnet",
-    "name": "Claude 3.7 Sonnet",
-    "provider": "Anthropic",
-    "type": "Propietario",
-    "releaseDate": "2025-02-24",
-    "context": 200000,
-    "modalities": [
-      "Multimodal"
-    ],
-    "atlasScore": 94.6,
-    "benchmarks": {
-      "MMLU": 92.2,
-      "GPQA": 86.8,
-      "AIME": 96.2,
-      "SWE-bench": 77.8
-    },
-    "officialUrl": "https://www.anthropic.com/",
-    "apiUrl": "https://docs.anthropic.com/"
-  },
-  {
-    "id": "claude-3-5-sonnet",
-    "name": "Claude 3.5 Sonnet (v2)",
-    "provider": "Anthropic",
-    "type": "Propietario",
-    "releaseDate": "2024-10-22",
-    "context": 200000,
-    "modalities": [
-      "Multimodal"
-    ],
-    "atlasScore": 92.4,
-    "benchmarks": {
-      "MMLU": 90.4,
-      "GPQA": 75.3,
-      "AIME": 82,
-      "SWE-bench": 64.9
-    },
-    "officialUrl": "https://www.anthropic.com/",
-    "apiUrl": "https://docs.anthropic.com/"
-  },
-  {
-    "id": "claude-3-5-haiku",
-    "name": "Claude 3.5 Haiku",
-    "provider": "Anthropic",
-    "type": "Propietario",
-    "releaseDate": "2024-11-04",
-    "context": 200000,
-    "modalities": [
-      "Text"
-    ],
-    "atlasScore": 88.5,
-    "benchmarks": {
-      "MMLU": 86.4,
-      "GPQA": 69.2,
-      "AIME": 74,
-      "SWE-bench": 51.6
-    },
-    "officialUrl": "https://www.anthropic.com/",
-    "apiUrl": "https://docs.anthropic.com/"
-  },
-  {
-    "id": "gpt-5-6-luna",
-    "name": "GPT-5.6 Luna",
-    "provider": "OpenAI",
-    "type": "Propietario",
-    "releaseDate": "2026-08-25",
-    "context": 2000000,
-    "modalities": [
-      "Multimodal"
-    ],
-    "atlasScore": 98.8,
-    "benchmarks": {
-      "MMLU": 97.9,
-      "GPQA": 93.6,
-      "AIME": 98.9,
-      "SWE-bench": 87.8
-    },
-    "officialUrl": "https://openai.com/",
-    "apiUrl": "https://platform.openai.com/docs/"
-  },
-  {
     "id": "gpt-sol",
     "name": "GPT Sol",
     "provider": "OpenAI",
@@ -175,6 +15,26 @@
       "GPQA": 92.6,
       "AIME": 98.4,
       "SWE-bench": 86.5
+    },
+    "officialUrl": "https://openai.com/",
+    "apiUrl": "https://platform.openai.com/docs/"
+  },
+  {
+    "id": "gpt-luna",
+    "name": "GPT Luna",
+    "provider": "OpenAI",
+    "type": "Propietario",
+    "releaseDate": "2026-08-15",
+    "context": 2000000,
+    "modalities": [
+      "Multimodal"
+    ],
+    "atlasScore": 97.6,
+    "benchmarks": {
+      "MMLU": 96.5,
+      "GPQA": 91.2,
+      "AIME": 97.1,
+      "SWE-bench": 84.8
     },
     "officialUrl": "https://openai.com/",
     "apiUrl": "https://platform.openai.com/docs/"
@@ -253,7 +113,7 @@
     "benchmarks": {
       "MMLU": 89.4,
       "GPQA": 83.2,
-      "AIME": 94,
+      "AIME": 94.0,
       "SWE-bench": 72.8
     },
     "officialUrl": "https://openai.com/",
@@ -272,7 +132,7 @@
     "atlasScore": 92.7,
     "benchmarks": {
       "MMLU": 91.8,
-      "GPQA": 78,
+      "GPQA": 78.0,
       "AIME": 83.3,
       "SWE-bench": 67.2
     },
@@ -300,24 +160,124 @@
     "apiUrl": "https://platform.openai.com/docs/"
   },
   {
-    "id": "gemini-3-5-flash-lite",
-    "name": "Gemini 3.5 Flash-Lite",
-    "provider": "Google",
+    "id": "claude-fable",
+    "name": "Claude Fable",
+    "provider": "Anthropic",
     "type": "Propietario",
-    "releaseDate": "2026-08-29",
-    "context": 2000000,
+    "releaseDate": "2026-08-24",
+    "context": 1000000,
     "modalities": [
       "Multimodal"
     ],
-    "atlasScore": 97.4,
+    "atlasScore": 98.7,
     "benchmarks": {
-      "MMLU": 96.5,
-      "GPQA": 90.8,
-      "AIME": 96.2,
-      "SWE-bench": 83.4
+      "MMLU": 97.8,
+      "GPQA": 93.4,
+      "AIME": 98.6,
+      "SWE-bench": 88.2
     },
-    "officialUrl": "https://deepmind.google/technologies/gemini/",
-    "apiUrl": "https://ai.google.dev/"
+    "officialUrl": "https://www.anthropic.com/",
+    "apiUrl": "https://docs.anthropic.com/"
+  },
+  {
+    "id": "claude-mythos",
+    "name": "Claude Mythos",
+    "provider": "Anthropic",
+    "type": "Propietario",
+    "releaseDate": "2026-08-10",
+    "context": 1000000,
+    "modalities": [
+      "Multimodal"
+    ],
+    "atlasScore": 97.9,
+    "benchmarks": {
+      "MMLU": 96.9,
+      "GPQA": 92.1,
+      "AIME": 97.5,
+      "SWE-bench": 85.9
+    },
+    "officialUrl": "https://www.anthropic.com/",
+    "apiUrl": "https://docs.anthropic.com/"
+  },
+  {
+    "id": "claude-opus-4-1",
+    "name": "Claude Opus 4.1",
+    "provider": "Anthropic",
+    "type": "Propietario",
+    "releaseDate": "2025-08-05",
+    "context": 200000,
+    "modalities": [
+      "Multimodal"
+    ],
+    "atlasScore": 93.7,
+    "benchmarks": {
+      "MMLU": 92.0,
+      "GPQA": 87.0,
+      "AIME": 93.0,
+      "SWE-bench": 74.5
+    },
+    "officialUrl": "https://www.anthropic.com/",
+    "apiUrl": "https://docs.anthropic.com/"
+  },
+  {
+    "id": "claude-3-7-sonnet",
+    "name": "Claude 3.7 Sonnet",
+    "provider": "Anthropic",
+    "type": "Propietario",
+    "releaseDate": "2025-02-24",
+    "context": 200000,
+    "modalities": [
+      "Multimodal"
+    ],
+    "atlasScore": 94.6,
+    "benchmarks": {
+      "MMLU": 92.2,
+      "GPQA": 86.8,
+      "AIME": 96.2,
+      "SWE-bench": 77.8
+    },
+    "officialUrl": "https://www.anthropic.com/",
+    "apiUrl": "https://docs.anthropic.com/"
+  },
+  {
+    "id": "claude-3-5-sonnet",
+    "name": "Claude 3.5 Sonnet (v2)",
+    "provider": "Anthropic",
+    "type": "Propietario",
+    "releaseDate": "2024-10-22",
+    "context": 200000,
+    "modalities": [
+      "Multimodal"
+    ],
+    "atlasScore": 92.4,
+    "benchmarks": {
+      "MMLU": 90.4,
+      "GPQA": 75.3,
+      "AIME": 82.0,
+      "SWE-bench": 64.9
+    },
+    "officialUrl": "https://www.anthropic.com/",
+    "apiUrl": "https://docs.anthropic.com/"
+  },
+  {
+    "id": "claude-3-5-haiku",
+    "name": "Claude 3.5 Haiku",
+    "provider": "Anthropic",
+    "type": "Propietario",
+    "releaseDate": "2024-11-04",
+    "context": 200000,
+    "modalities": [
+      "Text"
+    ],
+    "atlasScore": 88.5,
+    "benchmarks": {
+      "MMLU": 86.4,
+      "GPQA": 69.2,
+      "AIME": 74.0,
+      "SWE-bench": 51.6
+    },
+    "officialUrl": "https://www.anthropic.com/",
+    "apiUrl": "https://docs.anthropic.com/"
   },
   {
     "id": "google-flash-7",
@@ -334,7 +294,7 @@
       "MMLU": 96.8,
       "GPQA": 91.8,
       "AIME": 97.2,
-      "SWE-bench": 85
+      "SWE-bench": 85.0
     },
     "officialUrl": "https://deepmind.google/technologies/gemini/",
     "apiUrl": "https://ai.google.dev/"
@@ -353,28 +313,8 @@
     "benchmarks": {
       "MMLU": 97.5,
       "GPQA": 92.7,
-      "AIME": 98,
+      "AIME": 98.0,
       "SWE-bench": 86.2
-    },
-    "officialUrl": "https://deepmind.google/technologies/gemini/",
-    "apiUrl": "https://ai.google.dev/"
-  },
-  {
-    "id": "gemini-2-5-flash-lite",
-    "name": "Gemini 2.5 Flash-Lite",
-    "provider": "Google",
-    "type": "Propietario",
-    "releaseDate": "2025-06-18",
-    "context": 1000000,
-    "modalities": [
-      "Multimodal"
-    ],
-    "atlasScore": 93.8,
-    "benchmarks": {
-      "MMLU": 91.8,
-      "GPQA": 84.6,
-      "AIME": 92.4,
-      "SWE-bench": 74
     },
     "officialUrl": "https://deepmind.google/technologies/gemini/",
     "apiUrl": "https://ai.google.dev/"
@@ -394,7 +334,7 @@
       "MMLU": 92.4,
       "GPQA": 88.5,
       "AIME": 94.5,
-      "SWE-bench": 76
+      "SWE-bench": 76.0
     },
     "officialUrl": "https://deepmind.google/technologies/gemini/",
     "apiUrl": "https://ai.google.dev/"
@@ -440,6 +380,26 @@
     "apiUrl": "https://ai.google.dev/"
   },
   {
+    "id": "gemini-1-5-pro",
+    "name": "Gemini 1.5 Pro",
+    "provider": "Google",
+    "type": "Propietario",
+    "releaseDate": "2024-05-14",
+    "context": 2000000,
+    "modalities": [
+      "Multimodal"
+    ],
+    "atlasScore": 89.8,
+    "benchmarks": {
+      "MMLU": 87.9,
+      "GPQA": 72.8,
+      "AIME": 75.0,
+      "SWE-bench": 50.8
+    },
+    "officialUrl": "https://deepmind.google/technologies/gemini/",
+    "apiUrl": "https://ai.google.dev/"
+  },
+  {
     "id": "deepseek-r2",
     "name": "DeepSeek-R2",
     "provider": "DeepSeek",
@@ -471,7 +431,7 @@
     ],
     "atlasScore": 96.1,
     "benchmarks": {
-      "MMLU": 95,
+      "MMLU": 95.0,
       "GPQA": 88.9,
       "AIME": 95.4,
       "SWE-bench": 81.2
@@ -529,7 +489,7 @@
     "modalities": [
       "Multimodal"
     ],
-    "atlasScore": 98,
+    "atlasScore": 98.0,
     "benchmarks": {
       "MMLU": 97.1,
       "GPQA": 92.4,
@@ -540,28 +500,8 @@
     "apiUrl": "https://docs.x.ai/"
   },
   {
-    "id": "grok-4-20",
-    "name": "Grok 4.20",
-    "provider": "xAI",
-    "type": "Propietario",
-    "releaseDate": "2026-08-01",
-    "context": 2048000,
-    "modalities": [
-      "Multimodal"
-    ],
-    "atlasScore": 97,
-    "benchmarks": {
-      "MMLU": 96,
-      "GPQA": 91,
-      "AIME": 96.5,
-      "SWE-bench": 82.5
-    },
-    "officialUrl": "https://x.ai/",
-    "apiUrl": "https://docs.x.ai/"
-  },
-  {
-    "id": "grok-4-1-fast",
-    "name": "Grok 4.1 Fast",
+    "id": "grok-4-5",
+    "name": "Grok 4.5",
     "provider": "xAI",
     "type": "Propietario",
     "releaseDate": "2026-07-15",
@@ -574,7 +514,7 @@
       "MMLU": 95.4,
       "GPQA": 90.2,
       "AIME": 95.6,
-      "SWE-bench": 81
+      "SWE-bench": 81.0
     },
     "officialUrl": "https://x.ai/",
     "apiUrl": "https://docs.x.ai/"
@@ -594,7 +534,7 @@
       "MMLU": 91.5,
       "GPQA": 87.5,
       "AIME": 93.5,
-      "SWE-bench": 74
+      "SWE-bench": 74.0
     },
     "officialUrl": "https://x.ai/",
     "apiUrl": "https://docs.x.ai/"
@@ -612,7 +552,7 @@
     "atlasScore": 94.2,
     "benchmarks": {
       "MMLU": 92.7,
-      "GPQA": 88,
+      "GPQA": 88.0,
       "AIME": 95.8,
       "SWE-bench": 76.5
     },
@@ -620,24 +560,24 @@
     "apiUrl": "https://docs.x.ai/"
   },
   {
-    "id": "llama-4-scout",
-    "name": "Llama 4 Scout",
-    "provider": "Meta",
-    "type": "Open Weights",
-    "releaseDate": "2026-08-28",
-    "context": 2048000,
+    "id": "grok-2",
+    "name": "Grok 2",
+    "provider": "xAI",
+    "type": "Propietario",
+    "releaseDate": "2024-08-13",
+    "context": 128000,
     "modalities": [
       "Multimodal"
     ],
-    "atlasScore": 97.2,
+    "atlasScore": 88.2,
     "benchmarks": {
-      "MMLU": 96.4,
-      "GPQA": 90.4,
-      "AIME": 95.8,
-      "SWE-bench": 82
+      "MMLU": 87.5,
+      "GPQA": 69.4,
+      "AIME": 72.0,
+      "SWE-bench": 48.0
     },
-    "officialUrl": "https://www.llama.com/",
-    "apiUrl": "https://www.llama.com/"
+    "officialUrl": "https://x.ai/",
+    "apiUrl": "https://docs.x.ai/"
   },
   {
     "id": "llama-4-5-omni",
@@ -673,7 +613,7 @@
     "benchmarks": {
       "MMLU": 89.2,
       "GPQA": 76.8,
-      "AIME": 82,
+      "AIME": 82.0,
       "SWE-bench": 63.5
     },
     "officialUrl": "https://www.llama.com/",
@@ -693,7 +633,7 @@
     "benchmarks": {
       "MMLU": 88.6,
       "GPQA": 71.2,
-      "AIME": 76,
+      "AIME": 76.0,
       "SWE-bench": 54.2
     },
     "officialUrl": "https://www.llama.com/",
@@ -714,7 +654,7 @@
       "MMLU": 89.1,
       "GPQA": 73.8,
       "AIME": 78.5,
-      "SWE-bench": 58
+      "SWE-bench": 58.0
     },
     "officialUrl": "https://www.llama.com/",
     "apiUrl": "https://www.llama.com/"
@@ -732,7 +672,7 @@
     "atlasScore": 96.2,
     "benchmarks": {
       "MMLU": 95.2,
-      "GPQA": 89,
+      "GPQA": 89.0,
       "AIME": 94.2,
       "SWE-bench": 79.8
     },
@@ -754,7 +694,7 @@
       "MMLU": 89.8,
       "GPQA": 82.5,
       "AIME": 87.4,
-      "SWE-bench": 71
+      "SWE-bench": 71.0
     },
     "officialUrl": "https://qwenlm.github.io/",
     "apiUrl": "https://huggingface.co/Qwen"
@@ -773,7 +713,7 @@
     "benchmarks": {
       "MMLU": 90.8,
       "GPQA": 83.5,
-      "AIME": 89,
+      "AIME": 89.0,
       "SWE-bench": 72.4
     },
     "officialUrl": "https://qwenlm.github.io/",
@@ -792,7 +732,7 @@
     "atlasScore": 89.4,
     "benchmarks": {
       "MMLU": 86.8,
-      "GPQA": 71,
+      "GPQA": 71.0,
       "AIME": 78.2,
       "SWE-bench": 68.5
     },
@@ -812,7 +752,7 @@
     "atlasScore": 95.8,
     "benchmarks": {
       "MMLU": 94.6,
-      "GPQA": 88,
+      "GPQA": 88.0,
       "AIME": 93.5,
       "SWE-bench": 78.5
     },
@@ -833,7 +773,7 @@
     "benchmarks": {
       "MMLU": 88.9,
       "GPQA": 76.5,
-      "AIME": 81,
+      "AIME": 81.0,
       "SWE-bench": 67.2
     },
     "officialUrl": "https://mistral.ai/",
@@ -849,12 +789,12 @@
     "modalities": [
       "Text"
     ],
-    "atlasScore": 89,
+    "atlasScore": 89.0,
     "benchmarks": {
-      "MMLU": 88,
-      "GPQA": 74,
-      "AIME": 78,
-      "SWE-bench": 62
+      "MMLU": 88.0,
+      "GPQA": 74.0,
+      "AIME": 78.0,
+      "SWE-bench": 62.0
     },
     "officialUrl": "https://mistral.ai/",
     "apiUrl": "https://docs.mistral.ai/"
@@ -871,52 +811,12 @@
     ],
     "atlasScore": 88.6,
     "benchmarks": {
-      "MMLU": 86,
+      "MMLU": 86.0,
       "GPQA": 69.5,
-      "AIME": 75,
+      "AIME": 75.0,
       "SWE-bench": 66.8
     },
     "officialUrl": "https://mistral.ai/",
     "apiUrl": "https://docs.mistral.ai/"
-  },
-  {
-    "id": "command-a-plus",
-    "name": "Command A+",
-    "provider": "Cohere",
-    "type": "Propietario",
-    "releaseDate": "2026-07-28",
-    "context": 256000,
-    "modalities": [
-      "Multimodal"
-    ],
-    "atlasScore": 94,
-    "benchmarks": {
-      "MMLU": 92.5,
-      "GPQA": 85,
-      "AIME": 91,
-      "SWE-bench": 75.2
-    },
-    "officialUrl": "https://cohere.com/",
-    "apiUrl": "https://docs.cohere.com/"
-  },
-  {
-    "id": "granite-4-2-3b",
-    "name": "Granite 4.2 3B",
-    "provider": "IBM",
-    "type": "Open Source",
-    "releaseDate": "2026-08-05",
-    "context": 128000,
-    "modalities": [
-      "Text"
-    ],
-    "atlasScore": 88.2,
-    "benchmarks": {
-      "MMLU": 85.4,
-      "GPQA": 70.2,
-      "AIME": 74,
-      "SWE-bench": 62.5
-    },
-    "officialUrl": "https://www.ibm.com/granite",
-    "apiUrl": "https://huggingface.co/ibm-granite"
   }
 ]
