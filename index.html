@@ -1,11 +1,11 @@
 <!doctype html>
-<html lang="es">
+<html lang="es" data-theme="dark">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="LLM Atlas: catálogo, benchmarks y comparación de modelos de lenguaje.">
-  <meta name="theme-color" content="#0b1020">
-  <title>LLM Atlas — Modelos de lenguaje</title>
+  <meta name="description" content="LLM Atlas: catálogo, benchmarks y comparación de modelos de lenguaje organizados por empresa y versiones.">
+  <meta name="theme-color" content="#090d18">
+  <title>LLM Atlas — Modelos de lenguaje y Empresas</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -15,7 +15,7 @@
         <span class="brand-mark">λ</span>
         <span>LLM Atlas</span>
       </a>
-      <button id="themeToggle" class="icon-btn" type="button" aria-label="Cambiar tema">☼</button>
+      <button id="themeToggle" class="icon-btn" type="button" aria-label="Cambiar tema" title="Cambiar tema">☼</button>
     </div>
   </header>
 
@@ -24,25 +24,25 @@
       <div class="container">
         <div class="eyebrow">CATÁLOGO DE MODELOS DE IA</div>
         <h1>Encuentra el LLM adecuado.</h1>
-        <p>Compara modelos por fecha, benchmarks, contexto, modalidad y disponibilidad.</p>
+        <p>Explora empresas de IA y compara sus versiones de modelos más recientes, benchmarks, contexto y modalidades.</p>
         <div class="search-wrap">
           <span>⌕</span>
-          <input id="searchInput" type="search" placeholder="Buscar modelo, proveedor o capacidad…" autocomplete="off">
+          <input id="searchInput" type="search" placeholder="Buscar empresa, modelo, capacidad o benchmark…" autocomplete="off">
         </div>
       </div>
     </section>
 
     <section class="container content">
       <div class="toolbar">
-        <div class="stats"><strong id="modelCount">0</strong> modelos</div>
+        <div class="stats"><strong id="modelCount">0</strong> modelos · <strong id="companyCount">0</strong> empresas</div>
         <button id="filtersToggle" class="secondary-btn" type="button">☷ Filtros</button>
         <label class="sort">
-          <span>Ordenar</span>
+          <span>Ordenar empresas</span>
           <select id="sortSelect">
-            <option value="score">Atlas Score</option>
-            <option value="date">Más recientes</option>
-            <option value="name">Nombre</option>
-            <option value="context">Contexto</option>
+            <option value="score">Mayor Atlas Score</option>
+            <option value="date">Versión más reciente</option>
+            <option value="name">Nombre de empresa (A-Z)</option>
+            <option value="count">Cantidad de modelos</option>
           </select>
         </label>
       </div>
