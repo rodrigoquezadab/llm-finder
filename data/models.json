@@ -1,5 +1,45 @@
 [
   {
+    "id": "gpt-sol",
+    "name": "GPT Sol",
+    "provider": "OpenAI",
+    "type": "Propietario",
+    "releaseDate": "2026-08-20",
+    "context": 1000000,
+    "modalities": [
+      "Multimodal"
+    ],
+    "atlasScore": 98.4,
+    "benchmarks": {
+      "MMLU": 97.2,
+      "GPQA": 92.6,
+      "AIME": 98.4,
+      "SWE-bench": 86.5
+    },
+    "officialUrl": "https://openai.com/",
+    "apiUrl": "https://platform.openai.com/docs/"
+  },
+  {
+    "id": "gpt-luna",
+    "name": "GPT Luna",
+    "provider": "OpenAI",
+    "type": "Propietario",
+    "releaseDate": "2026-08-15",
+    "context": 2000000,
+    "modalities": [
+      "Multimodal"
+    ],
+    "atlasScore": 97.6,
+    "benchmarks": {
+      "MMLU": 96.5,
+      "GPQA": 91.2,
+      "AIME": 97.1,
+      "SWE-bench": 84.8
+    },
+    "officialUrl": "https://openai.com/",
+    "apiUrl": "https://platform.openai.com/docs/"
+  },
+  {
     "id": "gpt-5",
     "name": "GPT-5",
     "provider": "OpenAI",
@@ -120,6 +160,46 @@
     "apiUrl": "https://platform.openai.com/docs/"
   },
   {
+    "id": "claude-fable",
+    "name": "Claude Fable",
+    "provider": "Anthropic",
+    "type": "Propietario",
+    "releaseDate": "2026-08-24",
+    "context": 1000000,
+    "modalities": [
+      "Multimodal"
+    ],
+    "atlasScore": 98.7,
+    "benchmarks": {
+      "MMLU": 97.8,
+      "GPQA": 93.4,
+      "AIME": 98.6,
+      "SWE-bench": 88.2
+    },
+    "officialUrl": "https://www.anthropic.com/",
+    "apiUrl": "https://docs.anthropic.com/"
+  },
+  {
+    "id": "claude-mythos",
+    "name": "Claude Mythos",
+    "provider": "Anthropic",
+    "type": "Propietario",
+    "releaseDate": "2026-08-10",
+    "context": 1000000,
+    "modalities": [
+      "Multimodal"
+    ],
+    "atlasScore": 97.9,
+    "benchmarks": {
+      "MMLU": 96.9,
+      "GPQA": 92.1,
+      "AIME": 97.5,
+      "SWE-bench": 85.9
+    },
+    "officialUrl": "https://www.anthropic.com/",
+    "apiUrl": "https://docs.anthropic.com/"
+  },
+  {
     "id": "claude-opus-4-1",
     "name": "Claude Opus 4.1",
     "provider": "Anthropic",
@@ -198,6 +278,46 @@
     },
     "officialUrl": "https://www.anthropic.com/",
     "apiUrl": "https://docs.anthropic.com/"
+  },
+  {
+    "id": "google-flash-7",
+    "name": "Google Flash 7",
+    "provider": "Google",
+    "type": "Propietario",
+    "releaseDate": "2026-08-28",
+    "context": 3000000,
+    "modalities": [
+      "Multimodal"
+    ],
+    "atlasScore": 97.8,
+    "benchmarks": {
+      "MMLU": 96.8,
+      "GPQA": 91.8,
+      "AIME": 97.2,
+      "SWE-bench": 85.0
+    },
+    "officialUrl": "https://deepmind.google/technologies/gemini/",
+    "apiUrl": "https://ai.google.dev/"
+  },
+  {
+    "id": "gemini-3-0-ultra",
+    "name": "Gemini 3.0 Ultra",
+    "provider": "Google",
+    "type": "Propietario",
+    "releaseDate": "2026-08-12",
+    "context": 4000000,
+    "modalities": [
+      "Multimodal"
+    ],
+    "atlasScore": 98.1,
+    "benchmarks": {
+      "MMLU": 97.5,
+      "GPQA": 92.7,
+      "AIME": 98.0,
+      "SWE-bench": 86.2
+    },
+    "officialUrl": "https://deepmind.google/technologies/gemini/",
+    "apiUrl": "https://ai.google.dev/"
   },
   {
     "id": "gemini-2-5-pro",
@@ -280,6 +400,46 @@
     "apiUrl": "https://ai.google.dev/"
   },
   {
+    "id": "deepseek-r2",
+    "name": "DeepSeek-R2",
+    "provider": "DeepSeek",
+    "type": "Open Weights",
+    "releaseDate": "2026-08-18",
+    "context": 256000,
+    "modalities": [
+      "Text"
+    ],
+    "atlasScore": 97.4,
+    "benchmarks": {
+      "MMLU": 96.2,
+      "GPQA": 91.5,
+      "AIME": 98.2,
+      "SWE-bench": 83.7
+    },
+    "officialUrl": "https://www.deepseek.com/",
+    "apiUrl": "https://api-docs.deepseek.com/"
+  },
+  {
+    "id": "deepseek-v4",
+    "name": "DeepSeek-V4",
+    "provider": "DeepSeek",
+    "type": "Open Weights",
+    "releaseDate": "2026-07-22",
+    "context": 256000,
+    "modalities": [
+      "Multimodal"
+    ],
+    "atlasScore": 96.1,
+    "benchmarks": {
+      "MMLU": 95.0,
+      "GPQA": 88.9,
+      "AIME": 95.4,
+      "SWE-bench": 81.2
+    },
+    "officialUrl": "https://www.deepseek.com/",
+    "apiUrl": "https://api-docs.deepseek.com/"
+  },
+  {
     "id": "deepseek-r1",
     "name": "DeepSeek-R1",
     "provider": "DeepSeek",
@@ -320,64 +480,44 @@
     "apiUrl": "https://api-docs.deepseek.com/"
   },
   {
-    "id": "llama-4-maverick",
-    "name": "Llama 4 Maverick",
-    "provider": "Meta",
-    "type": "Open Weights",
-    "releaseDate": "2025-04-05",
-    "context": 1048576,
+    "id": "grok-5",
+    "name": "Grok 5",
+    "provider": "xAI",
+    "type": "Propietario",
+    "releaseDate": "2026-08-26",
+    "context": 2000000,
     "modalities": [
       "Multimodal"
     ],
-    "atlasScore": 91.9,
+    "atlasScore": 98.0,
     "benchmarks": {
-      "MMLU": 89.2,
-      "GPQA": 76.8,
-      "AIME": 82.0,
-      "SWE-bench": 63.5
+      "MMLU": 97.1,
+      "GPQA": 92.4,
+      "AIME": 97.8,
+      "SWE-bench": 85.6
     },
-    "officialUrl": "https://www.llama.com/",
-    "apiUrl": "https://www.llama.com/"
+    "officialUrl": "https://x.ai/",
+    "apiUrl": "https://docs.x.ai/"
   },
   {
-    "id": "llama-3-3-70b",
-    "name": "Llama 3.3 70B Instruct",
-    "provider": "Meta",
-    "type": "Open Weights",
-    "releaseDate": "2024-12-06",
-    "context": 128000,
+    "id": "grok-4-5",
+    "name": "Grok 4.5",
+    "provider": "xAI",
+    "type": "Propietario",
+    "releaseDate": "2026-07-15",
+    "context": 1000000,
     "modalities": [
-      "Text"
+      "Multimodal"
     ],
-    "atlasScore": 89.5,
+    "atlasScore": 96.5,
     "benchmarks": {
-      "MMLU": 88.6,
-      "GPQA": 71.2,
-      "AIME": 76.0,
-      "SWE-bench": 54.2
+      "MMLU": 95.4,
+      "GPQA": 90.2,
+      "AIME": 95.6,
+      "SWE-bench": 81.0
     },
-    "officialUrl": "https://www.llama.com/",
-    "apiUrl": "https://www.llama.com/"
-  },
-  {
-    "id": "llama-3-1-405b",
-    "name": "Llama 3.1 405B Instruct",
-    "provider": "Meta",
-    "type": "Open Weights",
-    "releaseDate": "2024-07-23",
-    "context": 128000,
-    "modalities": [
-      "Text"
-    ],
-    "atlasScore": 90.7,
-    "benchmarks": {
-      "MMLU": 89.1,
-      "GPQA": 73.8,
-      "AIME": 78.5,
-      "SWE-bench": 58.0
-    },
-    "officialUrl": "https://www.llama.com/",
-    "apiUrl": "https://www.llama.com/"
+    "officialUrl": "https://x.ai/",
+    "apiUrl": "https://docs.x.ai/"
   },
   {
     "id": "grok-4",
@@ -440,6 +580,106 @@
     "apiUrl": "https://docs.x.ai/"
   },
   {
+    "id": "llama-4-5-omni",
+    "name": "Llama 4.5 Omni",
+    "provider": "Meta",
+    "type": "Open Weights",
+    "releaseDate": "2026-08-25",
+    "context": 2000000,
+    "modalities": [
+      "Multimodal"
+    ],
+    "atlasScore": 96.8,
+    "benchmarks": {
+      "MMLU": 95.8,
+      "GPQA": 89.6,
+      "AIME": 94.8,
+      "SWE-bench": 80.5
+    },
+    "officialUrl": "https://www.llama.com/",
+    "apiUrl": "https://www.llama.com/"
+  },
+  {
+    "id": "llama-4-maverick",
+    "name": "Llama 4 Maverick",
+    "provider": "Meta",
+    "type": "Open Weights",
+    "releaseDate": "2025-04-05",
+    "context": 1048576,
+    "modalities": [
+      "Multimodal"
+    ],
+    "atlasScore": 91.9,
+    "benchmarks": {
+      "MMLU": 89.2,
+      "GPQA": 76.8,
+      "AIME": 82.0,
+      "SWE-bench": 63.5
+    },
+    "officialUrl": "https://www.llama.com/",
+    "apiUrl": "https://www.llama.com/"
+  },
+  {
+    "id": "llama-3-3-70b",
+    "name": "Llama 3.3 70B Instruct",
+    "provider": "Meta",
+    "type": "Open Weights",
+    "releaseDate": "2024-12-06",
+    "context": 128000,
+    "modalities": [
+      "Text"
+    ],
+    "atlasScore": 89.5,
+    "benchmarks": {
+      "MMLU": 88.6,
+      "GPQA": 71.2,
+      "AIME": 76.0,
+      "SWE-bench": 54.2
+    },
+    "officialUrl": "https://www.llama.com/",
+    "apiUrl": "https://www.llama.com/"
+  },
+  {
+    "id": "llama-3-1-405b",
+    "name": "Llama 3.1 405B Instruct",
+    "provider": "Meta",
+    "type": "Open Weights",
+    "releaseDate": "2024-07-23",
+    "context": 128000,
+    "modalities": [
+      "Text"
+    ],
+    "atlasScore": 90.7,
+    "benchmarks": {
+      "MMLU": 89.1,
+      "GPQA": 73.8,
+      "AIME": 78.5,
+      "SWE-bench": 58.0
+    },
+    "officialUrl": "https://www.llama.com/",
+    "apiUrl": "https://www.llama.com/"
+  },
+  {
+    "id": "qwen-3-5-omni",
+    "name": "Qwen 3.5 Omni",
+    "provider": "Alibaba",
+    "type": "Open Weights",
+    "releaseDate": "2026-08-22",
+    "context": 512000,
+    "modalities": [
+      "Multimodal"
+    ],
+    "atlasScore": 96.2,
+    "benchmarks": {
+      "MMLU": 95.2,
+      "GPQA": 89.0,
+      "AIME": 94.2,
+      "SWE-bench": 79.8
+    },
+    "officialUrl": "https://qwenlm.github.io/",
+    "apiUrl": "https://huggingface.co/Qwen"
+  },
+  {
     "id": "qwen3-235b",
     "name": "Qwen3 235B A22B",
     "provider": "Alibaba",
@@ -498,6 +738,26 @@
     },
     "officialUrl": "https://qwenlm.github.io/",
     "apiUrl": "https://huggingface.co/Qwen"
+  },
+  {
+    "id": "mistral-nexus-4",
+    "name": "Mistral Nexus 4",
+    "provider": "Mistral AI",
+    "type": "Propietario",
+    "releaseDate": "2026-08-19",
+    "context": 512000,
+    "modalities": [
+      "Multimodal"
+    ],
+    "atlasScore": 95.8,
+    "benchmarks": {
+      "MMLU": 94.6,
+      "GPQA": 88.0,
+      "AIME": 93.5,
+      "SWE-bench": 78.5
+    },
+    "officialUrl": "https://mistral.ai/",
+    "apiUrl": "https://docs.mistral.ai/"
   },
   {
     "id": "mistral-medium-3",

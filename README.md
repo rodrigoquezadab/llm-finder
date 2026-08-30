@@ -92,16 +92,16 @@ Ejecuta en tu terminal:
 
 ## 🏛️ Empresas y Familias de Modelos Indexadas
 
-| Empresa | Modelos Principales Indexados |
+| Empresa | Modelos Principales Indexados (Nuevos arriba) |
 | :--- | :--- |
-| **OpenAI** | GPT-5, o3, GPT-4.5, o3-mini, o1, GPT-4o |
-| **Anthropic** | Claude Opus 4.1, Claude 3.7 Sonnet, Claude 3.5 Sonnet, Claude 3.5 Haiku |
-| **Google** | Gemini 2.5 Pro, Gemini 2.0 Pro, Gemini 2.0 Flash, Gemini 1.5 Pro |
-| **DeepSeek** | DeepSeek-R1, DeepSeek-V3 |
-| **Meta** | Llama 4 Maverick, Llama 3.3 70B, Llama 3.1 405B |
-| **xAI** | Grok 4, Grok 3, Grok 2 |
-| **Alibaba** | Qwen3 235B, Qwen 2.5 Max, Qwen 2.5 Coder 32B |
-| **Mistral AI** | Mistral Medium 3, Mistral Large 2, Codestral 25.01 |
+| **OpenAI** | **GPT Sol**, **GPT Luna**, **GPT-5**, OpenAI o3, GPT-4.5, OpenAI o3-mini, OpenAI o1, GPT-4o |
+| **Anthropic** | **Claude Fable**, **Claude Mythos**, Claude Opus 4.1, Claude 3.7 Sonnet, Claude 3.5 Sonnet, Claude 3.5 Haiku |
+| **Google** | **Google Flash 7**, **Gemini 3.0 Ultra**, Gemini 2.5 Pro, Gemini 2.0 Pro, Gemini 2.0 Flash, Gemini 1.5 Pro |
+| **DeepSeek** | **DeepSeek-R2**, **DeepSeek-V4**, DeepSeek-R1, DeepSeek-V3 |
+| **Meta** | **Llama 4.5 Omni**, Llama 4 Maverick, Llama 3.3 70B, Llama 3.1 405B |
+| **xAI** | **Grok 5**, **Grok 4.5**, Grok 4, Grok 3, Grok 2 |
+| **Alibaba** | **Qwen 3.5 Omni**, Qwen3 235B, Qwen 2.5 Max, Qwen 2.5 Coder 32B |
+| **Mistral AI** | **Mistral Nexus 4**, Mistral Medium 3, Mistral Large 2, Codestral 25.01 |
 
 ---
 
