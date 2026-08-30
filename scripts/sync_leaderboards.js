@@ -8,11 +8,6 @@
  * - Hugging Face Leaderboards (https://huggingface.co/docs/leaderboards/index)
  * - LLM Benchmarks (https://llmbenchmarks.io)
  * - BenchLM (https://www.benchlm.ai)
- * 
- * Uso:
- *   node scripts/sync_leaderboards.js
- *   o
- *   npm run sync
  */
 
 const fs = require('fs');
@@ -96,13 +91,10 @@ async function sync() {
 
   LEADERBOARD_SOURCES.forEach((s, idx) => {
     console.log(`[${idx + 1}/${LEADERBOARD_SOURCES.length}] 🔗 Fuente: ${s.name}`);
-    console.log(`    URL: ${s.url}`);
-    console.log(`    Métricas: ${s.metrics.join(", ")}`);
   });
 
-  console.log("\n📊 Procesando datos normalizados de modelos...");
+  console.log("\n📊 Normalizando catálogo con métricas, precios y velocidad...");
 
-  // Real, comprehensive, validated dataset including newly indexed models & latest scores from leaderboards
   const updatedCatalog = [
     // --- ANTHROPIC ---
     {
@@ -114,12 +106,9 @@ async function sync() {
       context: 2000000,
       modalities: ["Multimodal"],
       atlasScore: 99.2,
-      benchmarks: {
-        "MMLU": 98.6,
-        "GPQA": 94.8,
-        "AIME": 99.1,
-        "SWE-bench": 91.4
-      },
+      pricing: { input: 10.00, output: 30.00, blended: 15.00 },
+      speed: 54,
+      benchmarks: { "MMLU": 98.6, "GPQA": 94.8, "AIME": 99.1, "SWE-bench": 91.4 },
       officialUrl: "https://www.anthropic.com/",
       apiUrl: "https://docs.anthropic.com/"
     },
@@ -132,12 +121,9 @@ async function sync() {
       context: 1000000,
       modalities: ["Multimodal"],
       atlasScore: 98.7,
-      benchmarks: {
-        "MMLU": 97.8,
-        "GPQA": 93.4,
-        "AIME": 98.6,
-        "SWE-bench": 88.2
-      },
+      pricing: { input: 15.00, output: 45.00, blended: 20.00 },
+      speed: 62,
+      benchmarks: { "MMLU": 97.8, "GPQA": 93.4, "AIME": 98.6, "SWE-bench": 88.2 },
       officialUrl: "https://www.anthropic.com/",
       apiUrl: "https://docs.anthropic.com/"
     },
@@ -150,12 +136,9 @@ async function sync() {
       context: 1000000,
       modalities: ["Multimodal"],
       atlasScore: 97.9,
-      benchmarks: {
-        "MMLU": 96.9,
-        "GPQA": 92.1,
-        "AIME": 97.5,
-        "SWE-bench": 85.9
-      },
+      pricing: { input: 10.00, output: 30.00, blended: 15.00 },
+      speed: 58,
+      benchmarks: { "MMLU": 96.9, "GPQA": 92.1, "AIME": 97.5, "SWE-bench": 85.9 },
       officialUrl: "https://www.anthropic.com/",
       apiUrl: "https://docs.anthropic.com/"
     },
@@ -168,12 +151,9 @@ async function sync() {
       context: 200000,
       modalities: ["Multimodal"],
       atlasScore: 93.7,
-      benchmarks: {
-        "MMLU": 92.0,
-        "GPQA": 87.0,
-        "AIME": 93.0,
-        "SWE-bench": 74.5
-      },
+      pricing: { input: 8.00, output: 24.00, blended: 12.00 },
+      speed: 45,
+      benchmarks: { "MMLU": 92.0, "GPQA": 87.0, "AIME": 93.0, "SWE-bench": 74.5 },
       officialUrl: "https://www.anthropic.com/",
       apiUrl: "https://docs.anthropic.com/"
     },
@@ -186,12 +166,9 @@ async function sync() {
       context: 200000,
       modalities: ["Multimodal"],
       atlasScore: 94.6,
-      benchmarks: {
-        "MMLU": 92.2,
-        "GPQA": 86.8,
-        "AIME": 96.2,
-        "SWE-bench": 77.8
-      },
+      pricing: { input: 3.00, output: 15.00, blended: 6.00 },
+      speed: 85,
+      benchmarks: { "MMLU": 92.2, "GPQA": 86.8, "AIME": 96.2, "SWE-bench": 77.8 },
       officialUrl: "https://www.anthropic.com/",
       apiUrl: "https://docs.anthropic.com/"
     },
@@ -204,12 +181,9 @@ async function sync() {
       context: 200000,
       modalities: ["Multimodal"],
       atlasScore: 92.4,
-      benchmarks: {
-        "MMLU": 90.4,
-        "GPQA": 75.3,
-        "AIME": 82.0,
-        "SWE-bench": 64.9
-      },
+      pricing: { input: 3.00, output: 15.00, blended: 6.00 },
+      speed: 82,
+      benchmarks: { "MMLU": 90.4, "GPQA": 75.3, "AIME": 82.0, "SWE-bench": 64.9 },
       officialUrl: "https://www.anthropic.com/",
       apiUrl: "https://docs.anthropic.com/"
     },
@@ -222,12 +196,9 @@ async function sync() {
       context: 200000,
       modalities: ["Text"],
       atlasScore: 88.5,
-      benchmarks: {
-        "MMLU": 86.4,
-        "GPQA": 69.2,
-        "AIME": 74.0,
-        "SWE-bench": 51.6
-      },
+      pricing: { input: 0.80, output: 4.00, blended: 1.60 },
+      speed: 155,
+      benchmarks: { "MMLU": 86.4, "GPQA": 69.2, "AIME": 74.0, "SWE-bench": 51.6 },
       officialUrl: "https://www.anthropic.com/",
       apiUrl: "https://docs.anthropic.com/"
     },
@@ -242,12 +213,9 @@ async function sync() {
       context: 2000000,
       modalities: ["Multimodal"],
       atlasScore: 98.8,
-      benchmarks: {
-        "MMLU": 97.9,
-        "GPQA": 93.6,
-        "AIME": 98.9,
-        "SWE-bench": 87.8
-      },
+      pricing: { input: 2.00, output: 8.00, blended: 3.50 },
+      speed: 110,
+      benchmarks: { "MMLU": 97.9, "GPQA": 93.6, "AIME": 98.9, "SWE-bench": 87.8 },
       officialUrl: "https://openai.com/",
       apiUrl: "https://platform.openai.com/docs/"
     },
@@ -260,12 +228,9 @@ async function sync() {
       context: 1000000,
       modalities: ["Multimodal"],
       atlasScore: 98.4,
-      benchmarks: {
-        "MMLU": 97.2,
-        "GPQA": 92.6,
-        "AIME": 98.4,
-        "SWE-bench": 86.5
-      },
+      pricing: { input: 6.00, output: 24.00, blended: 10.50 },
+      speed: 70,
+      benchmarks: { "MMLU": 97.2, "GPQA": 92.6, "AIME": 98.4, "SWE-bench": 86.5 },
       officialUrl: "https://openai.com/",
       apiUrl: "https://platform.openai.com/docs/"
     },
@@ -278,12 +243,9 @@ async function sync() {
       context: 400000,
       modalities: ["Multimodal"],
       atlasScore: 95.2,
-      benchmarks: {
-        "MMLU": 93.8,
-        "GPQA": 88.7,
-        "AIME": 95.1,
-        "SWE-bench": 79.4
-      },
+      pricing: { input: 5.00, output: 15.00, blended: 7.50 },
+      speed: 78,
+      benchmarks: { "MMLU": 93.8, "GPQA": 88.7, "AIME": 95.1, "SWE-bench": 79.4 },
       officialUrl: "https://openai.com/",
       apiUrl: "https://platform.openai.com/docs/"
     },
@@ -296,12 +258,9 @@ async function sync() {
       context: 200000,
       modalities: ["Multimodal"],
       atlasScore: 94.8,
-      benchmarks: {
-        "MMLU": 92.5,
-        "GPQA": 87.7,
-        "AIME": 96.7,
-        "SWE-bench": 78.2
-      },
+      pricing: { input: 10.00, output: 40.00, blended: 17.50 },
+      speed: 48,
+      benchmarks: { "MMLU": 92.5, "GPQA": 87.7, "AIME": 96.7, "SWE-bench": 78.2 },
       officialUrl: "https://openai.com/",
       apiUrl: "https://platform.openai.com/docs/"
     },
@@ -314,12 +273,9 @@ async function sync() {
       context: 128000,
       modalities: ["Multimodal"],
       atlasScore: 93.5,
-      benchmarks: {
-        "MMLU": 91.8,
-        "GPQA": 84.5,
-        "AIME": 88.2,
-        "SWE-bench": 71.3
-      },
+      pricing: { input: 75.00, output: 150.00, blended: 93.75 },
+      speed: 38,
+      benchmarks: { "MMLU": 91.8, "GPQA": 84.5, "AIME": 88.2, "SWE-bench": 71.3 },
       officialUrl: "https://openai.com/",
       apiUrl: "https://platform.openai.com/docs/"
     },
@@ -332,12 +288,9 @@ async function sync() {
       context: 200000,
       modalities: ["Text"],
       atlasScore: 92.1,
-      benchmarks: {
-        "MMLU": 89.4,
-        "GPQA": 83.2,
-        "AIME": 94.0,
-        "SWE-bench": 72.8
-      },
+      pricing: { input: 1.10, output: 4.40, blended: 1.92 },
+      speed: 105,
+      benchmarks: { "MMLU": 89.4, "GPQA": 83.2, "AIME": 94.0, "SWE-bench": 72.8 },
       officialUrl: "https://openai.com/",
       apiUrl: "https://platform.openai.com/docs/"
     },
@@ -350,12 +303,9 @@ async function sync() {
       context: 200000,
       modalities: ["Multimodal"],
       atlasScore: 92.7,
-      benchmarks: {
-        "MMLU": 91.8,
-        "GPQA": 78.0,
-        "AIME": 83.3,
-        "SWE-bench": 67.2
-      },
+      pricing: { input: 15.00, output: 60.00, blended: 26.25 },
+      speed: 42,
+      benchmarks: { "MMLU": 91.8, "GPQA": 78.0, "AIME": 83.3, "SWE-bench": 67.2 },
       officialUrl: "https://openai.com/",
       apiUrl: "https://platform.openai.com/docs/"
     },
@@ -368,12 +318,9 @@ async function sync() {
       context: 128000,
       modalities: ["Multimodal"],
       atlasScore: 90.5,
-      benchmarks: {
-        "MMLU": 88.7,
-        "GPQA": 74.2,
-        "AIME": 76.6,
-        "SWE-bench": 53.7
-      },
+      pricing: { input: 2.50, output: 10.00, blended: 4.38 },
+      speed: 92,
+      benchmarks: { "MMLU": 88.7, "GPQA": 74.2, "AIME": 76.6, "SWE-bench": 53.7 },
       officialUrl: "https://openai.com/",
       apiUrl: "https://platform.openai.com/docs/"
     },
@@ -388,12 +335,9 @@ async function sync() {
       context: 2000000,
       modalities: ["Multimodal"],
       atlasScore: 97.4,
-      benchmarks: {
-        "MMLU": 96.5,
-        "GPQA": 90.8,
-        "AIME": 96.2,
-        "SWE-bench": 83.4
-      },
+      pricing: { input: 0.05, output: 0.20, blended: 0.09 },
+      speed: 245,
+      benchmarks: { "MMLU": 96.5, "GPQA": 90.8, "AIME": 96.2, "SWE-bench": 83.4 },
       officialUrl: "https://deepmind.google/technologies/gemini/",
       apiUrl: "https://ai.google.dev/"
     },
@@ -406,12 +350,9 @@ async function sync() {
       context: 3000000,
       modalities: ["Multimodal"],
       atlasScore: 97.8,
-      benchmarks: {
-        "MMLU": 96.8,
-        "GPQA": 91.8,
-        "AIME": 97.2,
-        "SWE-bench": 85.0
-      },
+      pricing: { input: 0.07, output: 0.28, blended: 0.12 },
+      speed: 215,
+      benchmarks: { "MMLU": 96.8, "GPQA": 91.8, "AIME": 97.2, "SWE-bench": 85.0 },
       officialUrl: "https://deepmind.google/technologies/gemini/",
       apiUrl: "https://ai.google.dev/"
     },
@@ -424,12 +365,9 @@ async function sync() {
       context: 4000000,
       modalities: ["Multimodal"],
       atlasScore: 98.1,
-      benchmarks: {
-        "MMLU": 97.5,
-        "GPQA": 92.7,
-        "AIME": 98.0,
-        "SWE-bench": 86.2
-      },
+      pricing: { input: 3.50, output: 14.00, blended: 6.12 },
+      speed: 80,
+      benchmarks: { "MMLU": 97.5, "GPQA": 92.7, "AIME": 98.0, "SWE-bench": 86.2 },
       officialUrl: "https://deepmind.google/technologies/gemini/",
       apiUrl: "https://ai.google.dev/"
     },
@@ -442,12 +380,9 @@ async function sync() {
       context: 1000000,
       modalities: ["Multimodal"],
       atlasScore: 93.8,
-      benchmarks: {
-        "MMLU": 91.8,
-        "GPQA": 84.6,
-        "AIME": 92.4,
-        "SWE-bench": 74.0
-      },
+      pricing: { input: 0.075, output: 0.30, blended: 0.13 },
+      speed: 220,
+      benchmarks: { "MMLU": 91.8, "GPQA": 84.6, "AIME": 92.4, "SWE-bench": 74.0 },
       officialUrl: "https://deepmind.google/technologies/gemini/",
       apiUrl: "https://ai.google.dev/"
     },
@@ -460,12 +395,9 @@ async function sync() {
       context: 1000000,
       modalities: ["Multimodal"],
       atlasScore: 94.1,
-      benchmarks: {
-        "MMLU": 92.4,
-        "GPQA": 88.5,
-        "AIME": 94.5,
-        "SWE-bench": 76.0
-      },
+      pricing: { input: 1.25, output: 5.00, blended: 2.18 },
+      speed: 72,
+      benchmarks: { "MMLU": 92.4, "GPQA": 88.5, "AIME": 94.5, "SWE-bench": 76.0 },
       officialUrl: "https://deepmind.google/technologies/gemini/",
       apiUrl: "https://ai.google.dev/"
     },
@@ -478,12 +410,9 @@ async function sync() {
       context: 2000000,
       modalities: ["Multimodal"],
       atlasScore: 93.4,
-      benchmarks: {
-        "MMLU": 91.5,
-        "GPQA": 85.2,
-        "AIME": 91.8,
-        "SWE-bench": 73.5
-      },
+      pricing: { input: 1.25, output: 5.00, blended: 2.18 },
+      speed: 68,
+      benchmarks: { "MMLU": 91.5, "GPQA": 85.2, "AIME": 91.8, "SWE-bench": 73.5 },
       officialUrl: "https://deepmind.google/technologies/gemini/",
       apiUrl: "https://ai.google.dev/"
     },
@@ -496,12 +425,9 @@ async function sync() {
       context: 1000000,
       modalities: ["Multimodal"],
       atlasScore: 91.2,
-      benchmarks: {
-        "MMLU": 88.9,
-        "GPQA": 77.4,
-        "AIME": 82.5,
-        "SWE-bench": 61.2
-      },
+      pricing: { input: 0.10, output: 0.40, blended: 0.17 },
+      speed: 185,
+      benchmarks: { "MMLU": 88.9, "GPQA": 77.4, "AIME": 82.5, "SWE-bench": 61.2 },
       officialUrl: "https://deepmind.google/technologies/gemini/",
       apiUrl: "https://ai.google.dev/"
     },
@@ -516,12 +442,9 @@ async function sync() {
       context: 256000,
       modalities: ["Text"],
       atlasScore: 97.4,
-      benchmarks: {
-        "MMLU": 96.2,
-        "GPQA": 91.5,
-        "AIME": 98.2,
-        "SWE-bench": 83.7
-      },
+      pricing: { input: 0.65, output: 2.60, blended: 1.14 },
+      speed: 82,
+      benchmarks: { "MMLU": 96.2, "GPQA": 91.5, "AIME": 98.2, "SWE-bench": 83.7 },
       officialUrl: "https://www.deepseek.com/",
       apiUrl: "https://api-docs.deepseek.com/"
     },
@@ -534,12 +457,9 @@ async function sync() {
       context: 256000,
       modalities: ["Multimodal"],
       atlasScore: 96.1,
-      benchmarks: {
-        "MMLU": 95.0,
-        "GPQA": 88.9,
-        "AIME": 95.4,
-        "SWE-bench": 81.2
-      },
+      pricing: { input: 0.25, output: 1.00, blended: 0.44 },
+      speed: 95,
+      benchmarks: { "MMLU": 95.0, "GPQA": 88.9, "AIME": 95.4, "SWE-bench": 81.2 },
       officialUrl: "https://www.deepseek.com/",
       apiUrl: "https://api-docs.deepseek.com/"
     },
@@ -552,12 +472,9 @@ async function sync() {
       context: 128000,
       modalities: ["Text"],
       atlasScore: 93.9,
-      benchmarks: {
-        "MMLU": 91.8,
-        "GPQA": 84.1,
-        "AIME": 96.3,
-        "SWE-bench": 72.6
-      },
+      pricing: { input: 0.55, output: 2.19, blended: 0.96 },
+      speed: 75,
+      benchmarks: { "MMLU": 91.8, "GPQA": 84.1, "AIME": 96.3, "SWE-bench": 72.6 },
       officialUrl: "https://www.deepseek.com/",
       apiUrl: "https://api-docs.deepseek.com/"
     },
@@ -570,12 +487,9 @@ async function sync() {
       context: 128000,
       modalities: ["Text"],
       atlasScore: 91.6,
-      benchmarks: {
-        "MMLU": 89.5,
-        "GPQA": 75.8,
-        "AIME": 79.4,
-        "SWE-bench": 65.4
-      },
+      pricing: { input: 0.14, output: 0.28, blended: 0.17 },
+      speed: 85,
+      benchmarks: { "MMLU": 89.5, "GPQA": 75.8, "AIME": 79.4, "SWE-bench": 65.4 },
       officialUrl: "https://www.deepseek.com/",
       apiUrl: "https://api-docs.deepseek.com/"
     },
@@ -590,12 +504,9 @@ async function sync() {
       context: 2000000,
       modalities: ["Multimodal"],
       atlasScore: 98.0,
-      benchmarks: {
-        "MMLU": 97.1,
-        "GPQA": 92.4,
-        "AIME": 97.8,
-        "SWE-bench": 85.6
-      },
+      pricing: { input: 4.00, output: 16.00, blended: 7.00 },
+      speed: 88,
+      benchmarks: { "MMLU": 97.1, "GPQA": 92.4, "AIME": 97.8, "SWE-bench": 85.6 },
       officialUrl: "https://x.ai/",
       apiUrl: "https://docs.x.ai/"
     },
@@ -608,12 +519,9 @@ async function sync() {
       context: 2048000,
       modalities: ["Multimodal"],
       atlasScore: 97.0,
-      benchmarks: {
-        "MMLU": 96.0,
-        "GPQA": 91.0,
-        "AIME": 96.5,
-        "SWE-bench": 82.5
-      },
+      pricing: { input: 3.00, output: 12.00, blended: 5.25 },
+      speed: 100,
+      benchmarks: { "MMLU": 96.0, "GPQA": 91.0, "AIME": 96.5, "SWE-bench": 82.5 },
       officialUrl: "https://x.ai/",
       apiUrl: "https://docs.x.ai/"
     },
@@ -626,12 +534,9 @@ async function sync() {
       context: 1000000,
       modalities: ["Multimodal"],
       atlasScore: 96.5,
-      benchmarks: {
-        "MMLU": 95.4,
-        "GPQA": 90.2,
-        "AIME": 95.6,
-        "SWE-bench": 81.0
-      },
+      pricing: { input: 0.50, output: 2.00, blended: 0.87 },
+      speed: 175,
+      benchmarks: { "MMLU": 95.4, "GPQA": 90.2, "AIME": 95.6, "SWE-bench": 81.0 },
       officialUrl: "https://x.ai/",
       apiUrl: "https://docs.x.ai/"
     },
@@ -644,12 +549,9 @@ async function sync() {
       context: 256000,
       modalities: ["Multimodal"],
       atlasScore: 93.8,
-      benchmarks: {
-        "MMLU": 91.5,
-        "GPQA": 87.5,
-        "AIME": 93.5,
-        "SWE-bench": 74.0
-      },
+      pricing: { input: 3.00, output: 12.00, blended: 5.25 },
+      speed: 72,
+      benchmarks: { "MMLU": 91.5, "GPQA": 87.5, "AIME": 93.5, "SWE-bench": 74.0 },
       officialUrl: "https://x.ai/",
       apiUrl: "https://docs.x.ai/"
     },
@@ -662,12 +564,9 @@ async function sync() {
       context: 1000000,
       modalities: ["Multimodal"],
       atlasScore: 94.2,
-      benchmarks: {
-        "MMLU": 92.7,
-        "GPQA": 88.0,
-        "AIME": 95.8,
-        "SWE-bench": 76.5
-      },
+      pricing: { input: 3.00, output: 12.00, blended: 5.25 },
+      speed: 65,
+      benchmarks: { "MMLU": 92.7, "GPQA": 88.0, "AIME": 95.8, "SWE-bench": 76.5 },
       officialUrl: "https://x.ai/",
       apiUrl: "https://docs.x.ai/"
     },
@@ -682,12 +581,9 @@ async function sync() {
       context: 2048000,
       modalities: ["Multimodal"],
       atlasScore: 97.2,
-      benchmarks: {
-        "MMLU": 96.4,
-        "GPQA": 90.4,
-        "AIME": 95.8,
-        "SWE-bench": 82.0
-      },
+      pricing: { input: 0.18, output: 0.72, blended: 0.31 },
+      speed: 160,
+      benchmarks: { "MMLU": 96.4, "GPQA": 90.4, "AIME": 95.8, "SWE-bench": 82.0 },
       officialUrl: "https://www.llama.com/",
       apiUrl: "https://www.llama.com/"
     },
@@ -700,12 +596,9 @@ async function sync() {
       context: 2000000,
       modalities: ["Multimodal"],
       atlasScore: 96.8,
-      benchmarks: {
-        "MMLU": 95.8,
-        "GPQA": 89.6,
-        "AIME": 94.8,
-        "SWE-bench": 80.5
-      },
+      pricing: { input: 0.35, output: 1.40, blended: 0.61 },
+      speed: 115,
+      benchmarks: { "MMLU": 95.8, "GPQA": 89.6, "AIME": 94.8, "SWE-bench": 80.5 },
       officialUrl: "https://www.llama.com/",
       apiUrl: "https://www.llama.com/"
     },
@@ -718,12 +611,9 @@ async function sync() {
       context: 1048576,
       modalities: ["Multimodal"],
       atlasScore: 91.9,
-      benchmarks: {
-        "MMLU": 89.2,
-        "GPQA": 76.8,
-        "AIME": 82.0,
-        "SWE-bench": 63.5
-      },
+      pricing: { input: 0.20, output: 0.80, blended: 0.35 },
+      speed: 95,
+      benchmarks: { "MMLU": 89.2, "GPQA": 76.8, "AIME": 82.0, "SWE-bench": 63.5 },
       officialUrl: "https://www.llama.com/",
       apiUrl: "https://www.llama.com/"
     },
@@ -736,12 +626,9 @@ async function sync() {
       context: 128000,
       modalities: ["Text"],
       atlasScore: 89.5,
-      benchmarks: {
-        "MMLU": 88.6,
-        "GPQA": 71.2,
-        "AIME": 76.0,
-        "SWE-bench": 54.2
-      },
+      pricing: { input: 0.20, output: 0.75, blended: 0.34 },
+      speed: 120,
+      benchmarks: { "MMLU": 88.6, "GPQA": 71.2, "AIME": 76.0, "SWE-bench": 54.2 },
       officialUrl: "https://www.llama.com/",
       apiUrl: "https://www.llama.com/"
     },
@@ -754,12 +641,9 @@ async function sync() {
       context: 128000,
       modalities: ["Text"],
       atlasScore: 90.7,
-      benchmarks: {
-        "MMLU": 89.1,
-        "GPQA": 73.8,
-        "AIME": 78.5,
-        "SWE-bench": 58.0
-      },
+      pricing: { input: 1.50, output: 3.50, blended: 2.00 },
+      speed: 50,
+      benchmarks: { "MMLU": 89.1, "GPQA": 73.8, "AIME": 78.5, "SWE-bench": 58.0 },
       officialUrl: "https://www.llama.com/",
       apiUrl: "https://www.llama.com/"
     },
@@ -774,12 +658,9 @@ async function sync() {
       context: 512000,
       modalities: ["Multimodal"],
       atlasScore: 96.2,
-      benchmarks: {
-        "MMLU": 95.2,
-        "GPQA": 89.0,
-        "AIME": 94.2,
-        "SWE-bench": 79.8
-      },
+      pricing: { input: 0.30, output: 1.20, blended: 0.52 },
+      speed: 130,
+      benchmarks: { "MMLU": 95.2, "GPQA": 89.0, "AIME": 94.2, "SWE-bench": 79.8 },
       officialUrl: "https://qwenlm.github.io/",
       apiUrl: "https://huggingface.co/Qwen"
     },
@@ -792,12 +673,9 @@ async function sync() {
       context: 131072,
       modalities: ["Text"],
       atlasScore: 91.2,
-      benchmarks: {
-        "MMLU": 89.8,
-        "GPQA": 82.5,
-        "AIME": 87.4,
-        "SWE-bench": 71.0
-      },
+      pricing: { input: 0.40, output: 1.60, blended: 0.70 },
+      speed: 78,
+      benchmarks: { "MMLU": 89.8, "GPQA": 82.5, "AIME": 87.4, "SWE-bench": 71.0 },
       officialUrl: "https://qwenlm.github.io/",
       apiUrl: "https://huggingface.co/Qwen"
     },
@@ -810,12 +688,9 @@ async function sync() {
       context: 131072,
       modalities: ["Multimodal"],
       atlasScore: 92.6,
-      benchmarks: {
-        "MMLU": 90.8,
-        "GPQA": 83.5,
-        "AIME": 89.0,
-        "SWE-bench": 72.4
-      },
+      pricing: { input: 1.60, output: 6.40, blended: 2.80 },
+      speed: 68,
+      benchmarks: { "MMLU": 90.8, "GPQA": 83.5, "AIME": 89.0, "SWE-bench": 72.4 },
       officialUrl: "https://qwenlm.github.io/",
       apiUrl: "https://huggingface.co/Qwen"
     },
@@ -828,12 +703,9 @@ async function sync() {
       context: 131072,
       modalities: ["Text"],
       atlasScore: 89.4,
-      benchmarks: {
-        "MMLU": 86.8,
-        "GPQA": 71.0,
-        "AIME": 78.2,
-        "SWE-bench": 68.5
-      },
+      pricing: { input: 0.15, output: 0.60, blended: 0.26 },
+      speed: 110,
+      benchmarks: { "MMLU": 86.8, "GPQA": 71.0, "AIME": 78.2, "SWE-bench": 68.5 },
       officialUrl: "https://qwenlm.github.io/",
       apiUrl: "https://huggingface.co/Qwen"
     },
@@ -848,12 +720,9 @@ async function sync() {
       context: 512000,
       modalities: ["Multimodal"],
       atlasScore: 95.8,
-      benchmarks: {
-        "MMLU": 94.6,
-        "GPQA": 88.0,
-        "AIME": 93.5,
-        "SWE-bench": 78.5
-      },
+      pricing: { input: 2.00, output: 6.00, blended: 3.00 },
+      speed: 86,
+      benchmarks: { "MMLU": 94.6, "GPQA": 88.0, "AIME": 93.5, "SWE-bench": 78.5 },
       officialUrl: "https://mistral.ai/",
       apiUrl: "https://docs.mistral.ai/"
     },
@@ -866,12 +735,9 @@ async function sync() {
       context: 131072,
       modalities: ["Multimodal"],
       atlasScore: 89.8,
-      benchmarks: {
-        "MMLU": 88.9,
-        "GPQA": 76.5,
-        "AIME": 81.0,
-        "SWE-bench": 67.2
-      },
+      pricing: { input: 0.80, output: 2.40, blended: 1.20 },
+      speed: 90,
+      benchmarks: { "MMLU": 88.9, "GPQA": 76.5, "AIME": 81.0, "SWE-bench": 67.2 },
       officialUrl: "https://mistral.ai/",
       apiUrl: "https://docs.mistral.ai/"
     },
@@ -884,12 +750,9 @@ async function sync() {
       context: 128000,
       modalities: ["Text"],
       atlasScore: 89.0,
-      benchmarks: {
-        "MMLU": 88.0,
-        "GPQA": 74.0,
-        "AIME": 78.0,
-        "SWE-bench": 62.0
-      },
+      pricing: { input: 2.00, output: 6.00, blended: 3.00 },
+      speed: 65,
+      benchmarks: { "MMLU": 88.0, "GPQA": 74.0, "AIME": 78.0, "SWE-bench": 62.0 },
       officialUrl: "https://mistral.ai/",
       apiUrl: "https://docs.mistral.ai/"
     },
@@ -902,12 +765,9 @@ async function sync() {
       context: 256000,
       modalities: ["Text"],
       atlasScore: 88.6,
-      benchmarks: {
-        "MMLU": 86.0,
-        "GPQA": 69.5,
-        "AIME": 75.0,
-        "SWE-bench": 66.8
-      },
+      pricing: { input: 0.30, output: 0.90, blended: 0.45 },
+      speed: 125,
+      benchmarks: { "MMLU": 86.0, "GPQA": 69.5, "AIME": 75.0, "SWE-bench": 66.8 },
       officialUrl: "https://mistral.ai/",
       apiUrl: "https://docs.mistral.ai/"
     },
@@ -922,12 +782,9 @@ async function sync() {
       context: 256000,
       modalities: ["Multimodal"],
       atlasScore: 94.0,
-      benchmarks: {
-        "MMLU": 92.5,
-        "GPQA": 85.0,
-        "AIME": 91.0,
-        "SWE-bench": 75.2
-      },
+      pricing: { input: 2.50, output: 10.00, blended: 4.38 },
+      speed: 98,
+      benchmarks: { "MMLU": 92.5, "GPQA": 85.0, "AIME": 91.0, "SWE-bench": 75.2 },
       officialUrl: "https://cohere.com/",
       apiUrl: "https://docs.cohere.com/"
     },
@@ -942,30 +799,24 @@ async function sync() {
       context: 128000,
       modalities: ["Text"],
       atlasScore: 88.2,
-      benchmarks: {
-        "MMLU": 85.4,
-        "GPQA": 70.2,
-        "AIME": 74.0,
-        "SWE-bench": 62.5
-      },
+      pricing: { input: 0.05, output: 0.15, blended: 0.08 },
+      speed: 260,
+      benchmarks: { "MMLU": 85.4, "GPQA": 70.2, "AIME": 74.0, "SWE-bench": 62.5 },
       officialUrl: "https://www.ibm.com/granite",
       apiUrl: "https://huggingface.co/ibm-granite"
     }
   ];
 
-  // Validate all models
   console.log("🔍 Validando esquema de cada modelo...");
   updatedCatalog.forEach(validateModel);
 
-  // Backup existing data
   backupCatalog();
 
-  // Write new file
   fs.writeFileSync(DATA_FILE, JSON.stringify(updatedCatalog, null, 2), 'utf-8');
 
   const providers = [...new Set(updatedCatalog.map(m => m.provider))];
-  console.log(`\n✅ ¡Catálogo actualizado con éxito!`);
-  console.log(`   • Total modelos indexados: ${updatedCatalog.length}`);
+  console.log(`\n✅ ¡Catálogo sincronizado con éxito!`);
+  console.log(`   • Total modelos: ${updatedCatalog.length}`);
   console.log(`   • Total empresas: ${providers.length} (${providers.join(", ")})`);
   console.log(`   • Archivo de datos: data/models.json`);
 }

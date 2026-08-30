@@ -59,6 +59,18 @@
         ]
       }
     },
+    "pricing": {
+      "type": "object",
+      "properties": {
+        "input": { "type": "number", "minimum": 0 },
+        "output": { "type": "number", "minimum": 0 },
+        "blended": { "type": "number", "minimum": 0 }
+      }
+    },
+    "speed": {
+      "type": "number",
+      "minimum": 0
+    },
     "officialUrl": {
       "type": "string",
       "format": "uri"

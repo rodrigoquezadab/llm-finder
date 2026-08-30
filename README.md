@@ -20,12 +20,14 @@ A diferencia de listas desordenadas, **LLM Atlas agrupa los modelos en tarjetas 
 ## 🚀 Características Principales
 
 - 🏢 **Tarjetas por Empresa**: Explora de forma organizada cada organización de IA, sus enlaces oficiales y su catálogo completo de modelos.
+- 💰 **Ordenamiento y Filtro por Precio**: Ordena de menor a mayor costo ($ / 1M tokens) para encontrar modelos económicos o soluciones abiertas gratuitas.
+- ⚡ **Velocidad y Latencia (Tokens/s)**: Ordena y filtra por tasa de generación de tokens por segundo (hasta 260+ tok/s).
+- 💻 **Especialistas en Código (SWE-bench)**: Ordena por desempeño en ingeniería de software y programación.
 - ⏱️ **Versiones Ordenadas (Nuevas primero)**: Identifica al instante el modelo insignia y las versiones más recientes de cada familia técnica.
 - 🌙 **Modo Oscuro por Defecto**: Interfaz de diseño premium con estética *glassmorphism*, alto contraste y opción para alternar a modo claro.
-- ⚖️ **Comparador Multi-Modelo**: Selecciona hasta 5 modelos de distintas empresas y visualiza una tabla comparativa con contexto, tipo de licencia y benchmarks frente a frente.
-- 🔍 **Búsqueda y Filtros en Tiempo Real**: Filtra por nombre, empresa, modalidad (Texto, Multimodal), tipo (*Propietario*, *Open Weights*) o tamaño de ventana de contexto.
+- ⚖️ **Comparador Multi-Modelo**: Selecciona hasta 5 modelos de distintas empresas y visualiza una tabla comparativa con precios, velocidad, contexto, tipo de licencia y benchmarks frente a frente.
+- 🔍 **Búsqueda y Filtros en Tiempo Real**: Filtra por nombre, empresa, modalidad (Texto, Multimodal), tipo (*Propietario*, *Open Weights*), precio máximo o velocidad mínima.
 - 📊 **Benchmarks Oficiales Estandarizados**: Revisa métricas clave como **MMLU**, **GPQA**, **AIME** y **SWE-bench** en barras visuales de desempeño.
-- ⚡ **Ultrarrápido y Sin Dependencias**: Carga instantánea con JavaScript y CSS nativo, sin frameworks pesados ni rastreadores.
 
 ---
 

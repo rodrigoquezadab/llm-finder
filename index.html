@@ -37,9 +37,14 @@
         <div class="stats"><strong id="modelCount">0</strong> modelos · <strong id="companyCount">0</strong> empresas</div>
         <button id="filtersToggle" class="secondary-btn" type="button">☷ Filtros</button>
         <label class="sort">
-          <span>Ordenar empresas</span>
+          <span>Ordenar por</span>
           <select id="sortSelect">
-            <option value="score">Mayor Atlas Score</option>
+            <option value="score">Mayor Atlas Score (Inteligencia)</option>
+            <option value="price_asc">Precio: Menor a Mayor ($ Económico)</option>
+            <option value="price_desc">Precio: Mayor a Menor ($ Premium)</option>
+            <option value="speed">Mayor Velocidad (Tokens/s)</option>
+            <option value="coding">Mejor en Código (SWE-bench)</option>
+            <option value="context">Mayor Ventana de Contexto</option>
             <option value="date">Versión más reciente</option>
             <option value="name">Nombre de empresa (A-Z)</option>
             <option value="count">Cantidad de modelos</option>
@@ -75,6 +80,24 @@
             <option value="200000">200K+</option>
             <option value="500000">500K+</option>
             <option value="1000000">1M+</option>
+            <option value="2000000">2M+</option>
+          </select>
+        </label>
+        <label>Precio máx. (1M tokens)
+          <select id="priceFilter">
+            <option value="999999">Cualquiera</option>
+            <option value="0">Gratis / Open</option>
+            <option value="1">&le; $1.00 / 1M</option>
+            <option value="5">&le; $5.00 / 1M</option>
+            <option value="15">&le; $15.00 / 1M</option>
+          </select>
+        </label>
+        <label>Velocidad mín.
+          <select id="speedFilter">
+            <option value="0">Cualquiera</option>
+            <option value="75">75+ tok/s</option>
+            <option value="120">120+ tok/s (Rápido)</option>
+            <option value="180">180+ tok/s (Ultra)</option>
           </select>
         </label>
         <button id="clearFilters" class="link-btn" type="button">Limpiar filtros</button>

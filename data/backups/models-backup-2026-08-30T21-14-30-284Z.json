@@ -10,12 +10,6 @@
       "Multimodal"
     ],
     "atlasScore": 99.2,
-    "pricing": {
-      "input": 10,
-      "output": 30,
-      "blended": 15
-    },
-    "speed": 54,
     "benchmarks": {
       "MMLU": 98.6,
       "GPQA": 94.8,
@@ -36,12 +30,6 @@
       "Multimodal"
     ],
     "atlasScore": 98.7,
-    "pricing": {
-      "input": 15,
-      "output": 45,
-      "blended": 20
-    },
-    "speed": 62,
     "benchmarks": {
       "MMLU": 97.8,
       "GPQA": 93.4,
@@ -62,12 +50,6 @@
       "Multimodal"
     ],
     "atlasScore": 97.9,
-    "pricing": {
-      "input": 10,
-      "output": 30,
-      "blended": 15
-    },
-    "speed": 58,
     "benchmarks": {
       "MMLU": 96.9,
       "GPQA": 92.1,
@@ -88,12 +70,6 @@
       "Multimodal"
     ],
     "atlasScore": 93.7,
-    "pricing": {
-      "input": 8,
-      "output": 24,
-      "blended": 12
-    },
-    "speed": 45,
     "benchmarks": {
       "MMLU": 92,
       "GPQA": 87,
@@ -114,12 +90,6 @@
       "Multimodal"
     ],
     "atlasScore": 94.6,
-    "pricing": {
-      "input": 3,
-      "output": 15,
-      "blended": 6
-    },
-    "speed": 85,
     "benchmarks": {
       "MMLU": 92.2,
       "GPQA": 86.8,
@@ -140,12 +110,6 @@
       "Multimodal"
     ],
     "atlasScore": 92.4,
-    "pricing": {
-      "input": 3,
-      "output": 15,
-      "blended": 6
-    },
-    "speed": 82,
     "benchmarks": {
       "MMLU": 90.4,
       "GPQA": 75.3,
@@ -166,12 +130,6 @@
       "Text"
     ],
     "atlasScore": 88.5,
-    "pricing": {
-      "input": 0.8,
-      "output": 4,
-      "blended": 1.6
-    },
-    "speed": 155,
     "benchmarks": {
       "MMLU": 86.4,
       "GPQA": 69.2,
@@ -192,12 +150,6 @@
       "Multimodal"
     ],
     "atlasScore": 98.8,
-    "pricing": {
-      "input": 2,
-      "output": 8,
-      "blended": 3.5
-    },
-    "speed": 110,
     "benchmarks": {
       "MMLU": 97.9,
       "GPQA": 93.6,
@@ -218,12 +170,6 @@
       "Multimodal"
     ],
     "atlasScore": 98.4,
-    "pricing": {
-      "input": 6,
-      "output": 24,
-      "blended": 10.5
-    },
-    "speed": 70,
     "benchmarks": {
       "MMLU": 97.2,
       "GPQA": 92.6,
@@ -244,12 +190,6 @@
       "Multimodal"
     ],
     "atlasScore": 95.2,
-    "pricing": {
-      "input": 5,
-      "output": 15,
-      "blended": 7.5
-    },
-    "speed": 78,
     "benchmarks": {
       "MMLU": 93.8,
       "GPQA": 88.7,
@@ -270,12 +210,6 @@
       "Multimodal"
     ],
     "atlasScore": 94.8,
-    "pricing": {
-      "input": 10,
-      "output": 40,
-      "blended": 17.5
-    },
-    "speed": 48,
     "benchmarks": {
       "MMLU": 92.5,
       "GPQA": 87.7,
@@ -296,12 +230,6 @@
       "Multimodal"
     ],
     "atlasScore": 93.5,
-    "pricing": {
-      "input": 75,
-      "output": 150,
-      "blended": 93.75
-    },
-    "speed": 38,
     "benchmarks": {
       "MMLU": 91.8,
       "GPQA": 84.5,
@@ -322,12 +250,6 @@
       "Text"
     ],
     "atlasScore": 92.1,
-    "pricing": {
-      "input": 1.1,
-      "output": 4.4,
-      "blended": 1.92
-    },
-    "speed": 105,
     "benchmarks": {
       "MMLU": 89.4,
       "GPQA": 83.2,
@@ -348,12 +270,6 @@
       "Multimodal"
     ],
     "atlasScore": 92.7,
-    "pricing": {
-      "input": 15,
-      "output": 60,
-      "blended": 26.25
-    },
-    "speed": 42,
     "benchmarks": {
       "MMLU": 91.8,
       "GPQA": 78,
@@ -374,12 +290,6 @@
       "Multimodal"
     ],
     "atlasScore": 90.5,
-    "pricing": {
-      "input": 2.5,
-      "output": 10,
-      "blended": 4.38
-    },
-    "speed": 92,
     "benchmarks": {
       "MMLU": 88.7,
       "GPQA": 74.2,
@@ -400,12 +310,6 @@
       "Multimodal"
     ],
     "atlasScore": 97.4,
-    "pricing": {
-      "input": 0.05,
-      "output": 0.2,
-      "blended": 0.09
-    },
-    "speed": 245,
     "benchmarks": {
       "MMLU": 96.5,
       "GPQA": 90.8,
@@ -426,12 +330,6 @@
       "Multimodal"
     ],
     "atlasScore": 97.8,
-    "pricing": {
-      "input": 0.07,
-      "output": 0.28,
-      "blended": 0.12
-    },
-    "speed": 215,
     "benchmarks": {
       "MMLU": 96.8,
       "GPQA": 91.8,
@@ -452,12 +350,6 @@
       "Multimodal"
     ],
     "atlasScore": 98.1,
-    "pricing": {
-      "input": 3.5,
-      "output": 14,
-      "blended": 6.12
-    },
-    "speed": 80,
     "benchmarks": {
       "MMLU": 97.5,
       "GPQA": 92.7,
@@ -478,12 +370,6 @@
       "Multimodal"
     ],
     "atlasScore": 93.8,
-    "pricing": {
-      "input": 0.075,
-      "output": 0.3,
-      "blended": 0.13
-    },
-    "speed": 220,
     "benchmarks": {
       "MMLU": 91.8,
       "GPQA": 84.6,
@@ -504,12 +390,6 @@
       "Multimodal"
     ],
     "atlasScore": 94.1,
-    "pricing": {
-      "input": 1.25,
-      "output": 5,
-      "blended": 2.18
-    },
-    "speed": 72,
     "benchmarks": {
       "MMLU": 92.4,
       "GPQA": 88.5,
@@ -530,12 +410,6 @@
       "Multimodal"
     ],
     "atlasScore": 93.4,
-    "pricing": {
-      "input": 1.25,
-      "output": 5,
-      "blended": 2.18
-    },
-    "speed": 68,
     "benchmarks": {
       "MMLU": 91.5,
       "GPQA": 85.2,
@@ -556,12 +430,6 @@
       "Multimodal"
     ],
     "atlasScore": 91.2,
-    "pricing": {
-      "input": 0.1,
-      "output": 0.4,
-      "blended": 0.17
-    },
-    "speed": 185,
     "benchmarks": {
       "MMLU": 88.9,
       "GPQA": 77.4,
@@ -582,12 +450,6 @@
       "Text"
     ],
     "atlasScore": 97.4,
-    "pricing": {
-      "input": 0.65,
-      "output": 2.6,
-      "blended": 1.14
-    },
-    "speed": 82,
     "benchmarks": {
       "MMLU": 96.2,
       "GPQA": 91.5,
@@ -608,12 +470,6 @@
       "Multimodal"
     ],
     "atlasScore": 96.1,
-    "pricing": {
-      "input": 0.25,
-      "output": 1,
-      "blended": 0.44
-    },
-    "speed": 95,
     "benchmarks": {
       "MMLU": 95,
       "GPQA": 88.9,
@@ -634,12 +490,6 @@
       "Text"
     ],
     "atlasScore": 93.9,
-    "pricing": {
-      "input": 0.55,
-      "output": 2.19,
-      "blended": 0.96
-    },
-    "speed": 75,
     "benchmarks": {
       "MMLU": 91.8,
       "GPQA": 84.1,
@@ -660,12 +510,6 @@
       "Text"
     ],
     "atlasScore": 91.6,
-    "pricing": {
-      "input": 0.14,
-      "output": 0.28,
-      "blended": 0.17
-    },
-    "speed": 85,
     "benchmarks": {
       "MMLU": 89.5,
       "GPQA": 75.8,
@@ -686,12 +530,6 @@
       "Multimodal"
     ],
     "atlasScore": 98,
-    "pricing": {
-      "input": 4,
-      "output": 16,
-      "blended": 7
-    },
-    "speed": 88,
     "benchmarks": {
       "MMLU": 97.1,
       "GPQA": 92.4,
@@ -712,12 +550,6 @@
       "Multimodal"
     ],
     "atlasScore": 97,
-    "pricing": {
-      "input": 3,
-      "output": 12,
-      "blended": 5.25
-    },
-    "speed": 100,
     "benchmarks": {
       "MMLU": 96,
       "GPQA": 91,
@@ -738,12 +570,6 @@
       "Multimodal"
     ],
     "atlasScore": 96.5,
-    "pricing": {
-      "input": 0.5,
-      "output": 2,
-      "blended": 0.87
-    },
-    "speed": 175,
     "benchmarks": {
       "MMLU": 95.4,
       "GPQA": 90.2,
@@ -764,12 +590,6 @@
       "Multimodal"
     ],
     "atlasScore": 93.8,
-    "pricing": {
-      "input": 3,
-      "output": 12,
-      "blended": 5.25
-    },
-    "speed": 72,
     "benchmarks": {
       "MMLU": 91.5,
       "GPQA": 87.5,
@@ -790,12 +610,6 @@
       "Multimodal"
     ],
     "atlasScore": 94.2,
-    "pricing": {
-      "input": 3,
-      "output": 12,
-      "blended": 5.25
-    },
-    "speed": 65,
     "benchmarks": {
       "MMLU": 92.7,
       "GPQA": 88,
@@ -816,12 +630,6 @@
       "Multimodal"
     ],
     "atlasScore": 97.2,
-    "pricing": {
-      "input": 0.18,
-      "output": 0.72,
-      "blended": 0.31
-    },
-    "speed": 160,
     "benchmarks": {
       "MMLU": 96.4,
       "GPQA": 90.4,
@@ -842,12 +650,6 @@
       "Multimodal"
     ],
     "atlasScore": 96.8,
-    "pricing": {
-      "input": 0.35,
-      "output": 1.4,
-      "blended": 0.61
-    },
-    "speed": 115,
     "benchmarks": {
       "MMLU": 95.8,
       "GPQA": 89.6,
@@ -868,12 +670,6 @@
       "Multimodal"
     ],
     "atlasScore": 91.9,
-    "pricing": {
-      "input": 0.2,
-      "output": 0.8,
-      "blended": 0.35
-    },
-    "speed": 95,
     "benchmarks": {
       "MMLU": 89.2,
       "GPQA": 76.8,
@@ -894,12 +690,6 @@
       "Text"
     ],
     "atlasScore": 89.5,
-    "pricing": {
-      "input": 0.2,
-      "output": 0.75,
-      "blended": 0.34
-    },
-    "speed": 120,
     "benchmarks": {
       "MMLU": 88.6,
       "GPQA": 71.2,
@@ -920,12 +710,6 @@
       "Text"
     ],
     "atlasScore": 90.7,
-    "pricing": {
-      "input": 1.5,
-      "output": 3.5,
-      "blended": 2
-    },
-    "speed": 50,
     "benchmarks": {
       "MMLU": 89.1,
       "GPQA": 73.8,
@@ -946,12 +730,6 @@
       "Multimodal"
     ],
     "atlasScore": 96.2,
-    "pricing": {
-      "input": 0.3,
-      "output": 1.2,
-      "blended": 0.52
-    },
-    "speed": 130,
     "benchmarks": {
       "MMLU": 95.2,
       "GPQA": 89,
@@ -972,12 +750,6 @@
       "Text"
     ],
     "atlasScore": 91.2,
-    "pricing": {
-      "input": 0.4,
-      "output": 1.6,
-      "blended": 0.7
-    },
-    "speed": 78,
     "benchmarks": {
       "MMLU": 89.8,
       "GPQA": 82.5,
@@ -998,12 +770,6 @@
       "Multimodal"
     ],
     "atlasScore": 92.6,
-    "pricing": {
-      "input": 1.6,
-      "output": 6.4,
-      "blended": 2.8
-    },
-    "speed": 68,
     "benchmarks": {
       "MMLU": 90.8,
       "GPQA": 83.5,
@@ -1024,12 +790,6 @@
       "Text"
     ],
     "atlasScore": 89.4,
-    "pricing": {
-      "input": 0.15,
-      "output": 0.6,
-      "blended": 0.26
-    },
-    "speed": 110,
     "benchmarks": {
       "MMLU": 86.8,
       "GPQA": 71,
@@ -1050,12 +810,6 @@
       "Multimodal"
     ],
     "atlasScore": 95.8,
-    "pricing": {
-      "input": 2,
-      "output": 6,
-      "blended": 3
-    },
-    "speed": 86,
     "benchmarks": {
       "MMLU": 94.6,
       "GPQA": 88,
@@ -1076,12 +830,6 @@
       "Multimodal"
     ],
     "atlasScore": 89.8,
-    "pricing": {
-      "input": 0.8,
-      "output": 2.4,
-      "blended": 1.2
-    },
-    "speed": 90,
     "benchmarks": {
       "MMLU": 88.9,
       "GPQA": 76.5,
@@ -1102,12 +850,6 @@
       "Text"
     ],
     "atlasScore": 89,
-    "pricing": {
-      "input": 2,
-      "output": 6,
-      "blended": 3
-    },
-    "speed": 65,
     "benchmarks": {
       "MMLU": 88,
       "GPQA": 74,
@@ -1128,12 +870,6 @@
       "Text"
     ],
     "atlasScore": 88.6,
-    "pricing": {
-      "input": 0.3,
-      "output": 0.9,
-      "blended": 0.45
-    },
-    "speed": 125,
     "benchmarks": {
       "MMLU": 86,
       "GPQA": 69.5,
@@ -1154,12 +890,6 @@
       "Multimodal"
     ],
     "atlasScore": 94,
-    "pricing": {
-      "input": 2.5,
-      "output": 10,
-      "blended": 4.38
-    },
-    "speed": 98,
     "benchmarks": {
       "MMLU": 92.5,
       "GPQA": 85,
@@ -1180,12 +910,6 @@
       "Text"
     ],
     "atlasScore": 88.2,
-    "pricing": {
-      "input": 0.05,
-      "output": 0.15,
-      "blended": 0.08
-    },
-    "speed": 260,
     "benchmarks": {
       "MMLU": 85.4,
       "GPQA": 70.2,

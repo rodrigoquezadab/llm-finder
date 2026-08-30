@@ -28,8 +28,9 @@ function populateProviders() {
 
 function bindEvents() {
   $("#searchInput").addEventListener("input", render);
-  ["providerFilter", "typeFilter", "modalityFilter", "contextFilter", "sortSelect"].forEach(id => {
-    $("#" + id).addEventListener("change", render);
+  ["providerFilter", "typeFilter", "modalityFilter", "contextFilter", "priceFilter", "speedFilter", "sortSelect"].forEach(id => {
+    const el = $("#" + id);
+    if (el) el.addEventListener("change", render);
   });
   $("#filtersToggle").addEventListener("click", () => $("#filtersPanel").classList.toggle("open"));
   $("#clearFilters").addEventListener("click", () => {
@@ -38,6 +39,8 @@ function bindEvents() {
     $("#typeFilter").value = "";
     $("#modalityFilter").value = "";
     $("#contextFilter").value = "0";
+    if ($("#priceFilter")) $("#priceFilter").value = "999999";
+    if ($("#speedFilter")) $("#speedFilter").value = "0";
     render();
   });
   $("#themeToggle").addEventListener("click", toggleTheme);
@@ -53,16 +56,29 @@ function getFiltered() {
   const type = $("#typeFilter").value;
   const modality = $("#modalityFilter").value;
   const minContext = Number($("#contextFilter").value);
+  const maxPrice = $("#priceFilter") ? Number($("#priceFilter").value) : 999999;
+  const minSpeed = $("#speedFilter") ? Number($("#speedFilter").value) : 0;
 
   return state.models.filter(m => {
     const benchmarksStr = Object.entries(m.benchmarks || {}).map(([k, v]) => `${k} ${v}`).join(" ");
     const hay = `${m.name} ${m.provider} ${m.type} ${m.modalities.join(" ")} ${benchmarksStr}`.toLowerCase();
+    
+    const priceVal = m.type === "Open Source" || m.type === "Open Weights" ? 0 : (m.pricing?.blended ?? m.pricing?.input ?? 0);
+    const speedVal = m.speed || 0;
+
     return (!q || hay.includes(q))
       && (!provider || m.provider === provider)
       && (!type || m.type === type)
       && (!modality || m.modalities.includes(modality))
-      && m.context >= minContext;
+      && m.context >= minContext
+      && priceVal <= maxPrice
+      && speedVal >= minSpeed;
   });
+}
+
+function getModelPrice(m) {
+  if (m.type === "Open Source" || m.type === "Open Weights") return 0;
+  return m.pricing?.blended ?? m.pricing?.input ?? 0;
 }
 
 function groupAndSortCompanies(filteredModels) {
@@ -83,18 +99,38 @@ function groupAndSortCompanies(filteredModels) {
   const companies = Array.from(companyMap.values());
 
   companies.forEach(company => {
-    // Model versions ordered with newest first (más nuevas más arriba)
-    company.models.sort((a, b) => new Date(b.releaseDate) - new Date(a.releaseDate));
+    // Sort models inside company based on user preference or newest first by default
+    company.models.sort((a, b) => {
+      if (sort === "price_asc") return getModelPrice(a) - getModelPrice(b);
+      if (sort === "price_desc") return getModelPrice(b) - getModelPrice(a);
+      if (sort === "speed") return (b.speed || 0) - (a.speed || 0);
+      if (sort === "coding") return ((b.benchmarks?.["SWE-bench"] || 0) - (a.benchmarks?.["SWE-bench"] || 0));
+      if (sort === "context") return b.context - a.context;
+      if (sort === "score") return b.atlasScore - a.atlasScore;
+      return new Date(b.releaseDate) - new Date(a.releaseDate); // default date descending
+    });
+
     company.topScore = Math.max(...company.models.map(m => m.atlasScore));
+    company.minPrice = Math.min(...company.models.map(getModelPrice));
+    company.maxPrice = Math.max(...company.models.map(getModelPrice));
+    company.maxSpeed = Math.max(...company.models.map(m => m.speed || 0));
+    company.maxCoding = Math.max(...company.models.map(m => m.benchmarks?.["SWE-bench"] || 0));
+    company.maxContext = Math.max(...company.models.map(m => m.context || 0));
     company.latestRelease = company.models[0]?.releaseDate || "1970-01-01";
     company.totalCount = company.models.length;
   });
 
+  // Sort companies
   companies.sort((a, b) => {
+    if (sort === "price_asc") return a.minPrice - b.minPrice;
+    if (sort === "price_desc") return b.maxPrice - a.maxPrice;
+    if (sort === "speed") return b.maxSpeed - a.maxSpeed;
+    if (sort === "coding") return b.maxCoding - a.maxCoding;
+    if (sort === "context") return b.maxContext - a.maxContext;
     if (sort === "date") return new Date(b.latestRelease) - new Date(a.latestRelease);
     if (sort === "name") return a.provider.localeCompare(b.provider);
     if (sort === "count") return b.totalCount - a.totalCount;
-    return b.topScore - a.topScore;
+    return b.topScore - a.topScore; // default score
   });
 
   return companies;
@@ -157,6 +193,7 @@ function companyCardHTML(c) {
           <div class="company-badges">
             <span class="badge highlight">${c.models.length} ${c.models.length === 1 ? 'versión' : 'versiones'}</span>
             <span class="badge score-badge">Top Score: <strong>${c.topScore.toFixed(1)}</strong></span>
+            ${c.maxSpeed ? `<span class="badge speed-badge">⚡ Hasta ${c.maxSpeed} tok/s</span>` : ''}
           </div>
         </div>
       </div>
@@ -166,13 +203,21 @@ function companyCardHTML(c) {
     </div>
 
     <div class="versions-header">
-      <span>Versiones de modelos (más nuevas primero)</span>
+      <span>Versiones y modelos</span>
     </div>
 
     <div class="versions-list">
       ${modelsHTML}
     </div>
   </article>`;
+}
+
+function formatPrice(pricing, type) {
+  if (type === "Open Source" || type === "Open Weights") return "Gratis / Open";
+  if (!pricing) return "—";
+  if (pricing.blended !== undefined) return `$${pricing.blended.toFixed(2)} / 1M`;
+  if (pricing.input !== undefined) return `$${pricing.input.toFixed(2)} / 1M`;
+  return "—";
 }
 
 function modelVersionHTML(m, isLatest) {
@@ -191,6 +236,8 @@ function modelVersionHTML(m, isLatest) {
           <span class="meta-pill date-pill">📅 ${formatDate(m.releaseDate)}</span>
           <span class="meta-pill type-pill">${escapeHTML(m.type)}</span>
           <span class="meta-pill ctx-pill">🧠 ${formatContext(m.context)} ctx</span>
+          <span class="meta-pill price-pill">💰 ${formatPrice(m.pricing, m.type)}</span>
+          ${m.speed ? `<span class="meta-pill speed-pill">⚡ ${m.speed} tok/s</span>` : ''}
           <span class="meta-pill mod-pill">✦ ${escapeHTML(m.modalities.join(", "))}</span>
         </div>
       </div>
@@ -226,6 +273,13 @@ function buildActiveFilters() {
   if ($("#typeFilter").value) labels.push(`Tipo: ${escapeHTML($("#typeFilter").value)}`);
   if ($("#modalityFilter").value) labels.push(`Modalidad: ${escapeHTML($("#modalityFilter").value)}`);
   if ($("#contextFilter").value !== "0") labels.push(`Contexto: ${formatContext(Number($("#contextFilter").value))}+`);
+  if ($("#priceFilter") && $("#priceFilter").value !== "999999") {
+    const val = Number($("#priceFilter").value);
+    labels.push(val === 0 ? `Precio: Gratis / Open` : `Precio: ≤ $${val}/1M`);
+  }
+  if ($("#speedFilter") && $("#speedFilter").value !== "0") {
+    labels.push(`Velocidad: ≥ ${$("#speedFilter").value} tok/s`);
+  }
   return labels.map(x => `<span class="badge active-tag">${x}</span>`).join("");
 }
 
@@ -233,6 +287,12 @@ function openDetails(id) {
   const m = state.models.find(x => x.id === id);
   if (!m) return;
   
+  const pricingHTML = m.pricing ? `
+    <li><span>Precio Entrada (Input):</span> <strong>$${m.pricing.input.toFixed(2)} / 1M tokens</strong></li>
+    <li><span>Precio Salida (Output):</span> <strong>$${m.pricing.output.toFixed(2)} / 1M tokens</strong></li>
+    <li><span>Precio Promedio (Blended):</span> <strong>$${m.pricing.blended.toFixed(2)} / 1M tokens</strong></li>
+  ` : `<li><span>Precio:</span> <strong>${m.type === 'Propietario' ? 'Consultar proveedor' : 'Gratis / Open Source'}</strong></li>`;
+
   $("#dialogContent").innerHTML = `<div class="dialog-body">
     <div class="detail-grid">
       <section class="detail-overview">
@@ -246,8 +306,10 @@ function openDetails(id) {
         <ul class="detail-specs">
           <li><span>Fecha de lanzamiento:</span> <strong>${formatDate(m.releaseDate)}</strong></li>
           <li><span>Ventana de contexto:</span> <strong>${formatContext(m.context)} tokens</strong></li>
+          <li><span>Velocidad de generación:</span> <strong>${m.speed ? `${m.speed} tokens/segundo` : 'No medido'}</strong></li>
           <li><span>Modalidades:</span> <strong>${escapeHTML(m.modalities.join(", "))}</strong></li>
           <li><span>Tipo de licencia:</span> <strong>${escapeHTML(m.type)}</strong></li>
+          ${pricingHTML}
         </ul>
         <div class="detail-links">
           <a class="primary-btn" href="${m.officialUrl}" target="_blank" rel="noopener noreferrer">Sitio oficial ↗</a>
@@ -266,7 +328,7 @@ function openDetails(id) {
             </tr>`).join("")}
           </tbody>
         </table>
-        <p class="bench-footnote">Los valores corresponden a evaluaciones de referencia oficiales e independientes estandarizadas.</p>
+        <p class="bench-footnote">Los valores corresponden a evaluaciones de referencia oficiales e independientes estandarizadas (Artificial Analysis, Opper AI, Arena, Hugging Face).</p>
       </section>
     </div>
   </div>`;
@@ -305,6 +367,8 @@ function openCompare() {
     <tbody>
       <tr><th>Empresa / Proveedor</th>${selected.map(m => `<td><strong>${escapeHTML(m.provider)}</strong></td>`).join("")}</tr>
       <tr><th>Atlas Score</th>${selected.map(m => `<td><span class="compare-score">${m.atlasScore}</span></td>`).join("")}</tr>
+      <tr><th>Precio Blended (1M tokens)</th>${selected.map(m => `<td><strong>${formatPrice(m.pricing, m.type)}</strong></td>`).join("")}</tr>
+      <tr><th>Velocidad (tok/s)</th>${selected.map(m => `<td><strong>${m.speed ? `${m.speed} tok/s` : '—'}</strong></td>`).join("")}</tr>
       <tr><th>Fecha Lanzamiento</th>${selected.map(m => `<td>${formatDate(m.releaseDate)}</td>`).join("")}</tr>
       <tr><th>Ventana Contexto</th>${selected.map(m => `<td>${formatContext(m.context)}</td>`).join("")}</tr>
       <tr><th>Tipo</th>${selected.map(m => `<td><span class="badge">${escapeHTML(m.type)}</span></td>`).join("")}</tr>
@@ -347,7 +411,7 @@ function toggleTheme() {
 
 function restoreTheme() {
   const saved = localStorage.getItem("llm-atlas-theme");
-  const theme = saved || "dark"; // Default is dark mode
+  const theme = saved || "dark";
   updateThemeUI(theme);
 }
 
